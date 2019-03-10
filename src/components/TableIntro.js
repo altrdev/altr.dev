@@ -10,13 +10,19 @@ import Obfuscate from 'react-obfuscate'
 const styles = theme => ({
     table: {
         marginTop: theme.spacing.unit,
-        width: "auto"
+        tableLayout: "fixed"
     },
     tableCell: {
         borderBottom: 0,
         paddingLeft: 0,
         lineHeight: 1.5,
-        fontSize: "1rem"
+        fontSize: "1rem",
+        '& a':{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+            display: "block"
+        }
     },
     tableRow: {
         height: 30
@@ -45,7 +51,7 @@ class TableIntro extends Component {
                 <TableBody>
                 {rows.map(row => (
                     <TableRow key={row.id} className={classes.tableRow}>
-                        <TableCell component="th" scope="row" style={{fontWeight: 800}} className={classes.tableCell}>
+                        <TableCell component="th" scope="row" style={{fontWeight: 800, width: 100}} className={classes.tableCell}>
                             {row.title}
                         </TableCell>
                         <TableCell align="left" className={classes.tableCell}>
