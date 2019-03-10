@@ -1,18 +1,44 @@
 import React, { Component } from 'react';
-import './App.css';
+import withStyles from '@material-ui/core/styles/withStyles';
+import PropTypes from 'prop-types';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import FloatingIntro from './components/FloatingIntro';
+import ParallaxBackground from './components/ParallaxBackground';
+import ContentResume from './components/ContentResume';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  },
+  palette: {
+    primary: {
+      main: '#0EB57D',
+      contrastText: '#ffffff'
+    }
+    // error: will use the default color
+  },
+});
 
 class App extends Component {
   render() {
+    //const { classes } = this.props;
     return (
-      <article>
-        <h1>I will be back soon!</h1>
-        <div>   
-          <p>Sorry for the inconvenience but I&rsquo;m performing some maintenance at the moment. I will be back online shortly!</p>
-          <p>&mdash; altrdev <span role="img" aria-label="alien">👾</span></p>
-        </div>
-      </article>
+      <MuiThemeProvider theme={theme}>
+      <React.Fragment>
+        <CssBaseline/>
+        <ParallaxBackground/>
+        <FloatingIntro/>
+        <ContentResume/>
+      </React.Fragment>
+      </MuiThemeProvider>
     );
   }
 }
 
-export default App;
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(theme) (App);
