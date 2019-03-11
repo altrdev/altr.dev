@@ -1,5 +1,4 @@
 .animateLoading {
-    font-size: 21px;
     text-align: center;
     animation: fadein 3s;
     -moz-animation: fadein 3s; /* Firefox */

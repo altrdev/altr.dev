@@ -78,7 +78,8 @@ const styles = theme => ({
       textTransform: 'uppercase',
     },
     description: {
-      marginBottom: theme.spacing.unit * 5 
+      marginBottom: theme.spacing.unit * 5,
+      height: '100%' 
     },
     icon: {
       fill: theme.palette.primary.contrastText,
