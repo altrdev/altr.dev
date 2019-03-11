@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import './animate.css';
 
 
 const theme = createMuiTheme({
@@ -80,11 +81,13 @@ class App extends Component {
       :
       <MuiThemeProvider theme={theme}>
         <React.Fragment>
-          <CssBaseline/>
-          <ParallaxBackground/>
-          <FloatingIntro/>
-          <ContentResume/>
-          <Footer/>
+          <div className="animateLoading">
+            <CssBaseline/>
+            <ParallaxBackground/>
+            <FloatingIntro/>
+            <ContentResume/>
+            <Footer/>
+          </div>
         </React.Fragment>
       </MuiThemeProvider>
     return (
