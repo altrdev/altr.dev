@@ -87,6 +87,7 @@ class App extends Component {
             <FloatingIntro/>
             <ContentResume/>
             <Footer/>
+            <script id="CookieDeclaration" src="https://consent.cookiebot.com/800b48d7-e6d0-4aac-b9ac-94d622bdac24/cd.js" type="text/javascript" async></script>
           </div>
         </React.Fragment>
       </MuiThemeProvider>
