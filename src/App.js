@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import FloatingIntro from './components/FloatingIntro';
 import ParallaxBackground from './components/ParallaxBackground';
 import ContentResume from './components/ContentResume';
+import Footer from './components/Footer';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 
@@ -31,6 +32,7 @@ class App extends Component {
         <ParallaxBackground/>
         <FloatingIntro/>
         <ContentResume/>
+        <Footer/>
       </React.Fragment>
       </MuiThemeProvider>
     );

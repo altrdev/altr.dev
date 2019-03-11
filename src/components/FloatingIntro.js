@@ -13,7 +13,6 @@ import TableIntro from './TableIntro';
 import Icon from '@mdi/react'
 import { mdiLinkedinBox, mdiInstagram, mdiGithubCircle, mdiTwitter } from '@mdi/js'
 import AvatarImage from '../images/Profile_square.jpg';
-
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
@@ -61,22 +60,22 @@ const styles = theme => ({
       marginBottom: theme.spacing.unit * 2,
     },
     name: {
-      fontFamily: 'Open Sans',
       fontWeight: 800,
       marginBottom: theme.spacing.unit,
-      textTransform: 'uppercase'
+      textTransform: 'uppercase',
+      letterSpacing: 2
     },
     work: {
-      fontFamily: 'Open Sans',
       fontWeight: 600,
       marginBottom: theme.spacing.unit,
-      textTransform: 'uppercase'
+      textTransform: 'uppercase',
+      letterSpacing: 2
     },
     title: {
       fontWeight: 600,
       marginBottom: theme.spacing.unit * 0.5,
-      letterSpacing: 3,
-      textTransform: 'uppercase'
+      letterSpacing: 2,
+      textTransform: 'uppercase',
     },
     description: {
       marginBottom: theme.spacing.unit * 5 
