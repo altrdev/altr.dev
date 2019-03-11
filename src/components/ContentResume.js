@@ -5,8 +5,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 const styles = theme => ({
     demoDiv: {
-        height:500,
-        fontSize:20,
+        height: 1000,
+        fontSize: '1rem',
         textAlign: "center",
         padding:20
     }
