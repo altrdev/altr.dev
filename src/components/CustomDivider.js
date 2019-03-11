@@ -9,8 +9,7 @@ const styles = theme => ({
          backgroundColor: theme.palette.primary.main,
          width: 50,
          height: 3,
-         marginBottom: theme.spacing.unit,
-
+         marginBottom: theme.spacing.unit
      }  
 });
 

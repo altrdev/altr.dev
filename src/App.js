@@ -6,6 +6,8 @@ import FloatingIntro from './components/FloatingIntro';
 import ParallaxBackground from './components/ParallaxBackground';
 import ContentResume from './components/ContentResume';
 import Footer from './components/Footer';
+import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 
@@ -22,19 +24,71 @@ const theme = createMuiTheme({
   },
 });
 
+const styles = theme => ({
+  progress: {
+    display: "block", 
+    justifyContent: "center", 
+    margin: "auto"
+  },
+  containerDiv: {
+    height: 200, 
+    position: "absolute", 
+    margin: "auto", 
+    top: 0, 
+    right: 0, 
+    bottom: 0, 
+    left: 0, 
+    letterSpacing: 2, 
+    textTransform: 'uppercase'
+  },
+  loading: {
+    marginTop: theme.spacing.unit
+  }
+});
+
 class App extends Component {
+  constructor(props){
+      super(props);
+
+      this.state = {loading: true}
+  }
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({loading: false})
+    }, 1500)
+  }
+  
   render() {
-    //const { classes } = this.props;
-    return (
+    const { classes } = this.props;
+
+    let content = 
+      this.state.loading 
+      ?
       <MuiThemeProvider theme={theme}>
-      <React.Fragment>
-        <CssBaseline/>
-        <ParallaxBackground/>
-        <FloatingIntro/>
-        <ContentResume/>
-        <Footer/>
-      </React.Fragment>
+        <React.Fragment>
+          <div style={{width: "100%", height: "100vh"}}>
+            <div className={classes.containerDiv}>
+              <CircularProgress className={classes.progress} />
+              <Typography variant="subtitle1" align="center" color="textSecondary" className={classes.loading}>
+                Loading Resume ...
+              </Typography>
+            </div>
+          </div>
+        </React.Fragment>
       </MuiThemeProvider>
+      :
+      <MuiThemeProvider theme={theme}>
+        <React.Fragment>
+          <CssBaseline/>
+          <ParallaxBackground/>
+          <FloatingIntro/>
+          <ContentResume/>
+          <Footer/>
+        </React.Fragment>
+      </MuiThemeProvider>
+    return (
+      content
     );
   }
 }
@@ -43,4 +97,4 @@ App.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(theme) (App);
+export default withStyles(styles) (App);
