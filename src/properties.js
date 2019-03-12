@@ -1,9 +1,11 @@
+import React from "react";
 import { mdiLinkedinBox, mdiInstagram, mdiGithubCircle, mdiTwitter } from '@mdi/js'
+import Obfuscate from 'react-obfuscate'
 
 let id = 0;
-function createData(name, link) {
+function createData(label, value) {
   id += 1;
-  return { id, name, link };
+  return { id, label, value };
 }
 
 export const properties = {
@@ -11,7 +13,7 @@ export const properties = {
         aboutMe: "About me",
         experience: "Experience",
         education: "Education",
-        skills: "Skills"
+        skills: "Skill"
     },
     floatingIntro: {
         name: "Alessandro Travi",
@@ -22,12 +24,30 @@ export const properties = {
             createData(mdiGithubCircle, "https://github.com/altrdev/"),
             createData(mdiInstagram, "https://www.instagram.com/alessandro.travi/"),
             createData(mdiTwitter, "https://twitter.com/altrdev")
+        ],
+        tableRows: [
+            createData("Age", 29),
+            createData("Country", "Como Lake, Italy"),
+            createData("Email", <Obfuscate email="alessandro.travi+dev@gmail.com"/>),
+            createData("Website", "https://altr.dev")
         ]
     },
     content: {
         cv_link: "https://drive.google.com/file/d/1aQQRsodHn1qRlHcnAgElRyENFE-ydNF_/view?usp=sharing",
         labels: {
             download: "Download resume"
-        }
+        },
+        skillsLanguage: [
+            createData("Java", 95),
+            createData("NodeJs", 80),
+            createData("ReactJs", 65),
+            createData("Kotlin", 85)
+        ],
+        skillsTool: [
+            createData("Springboot", 90),
+            createData("Docker", 85),
+            createData("MongoDB", 87),
+            createData("Solidity", 75) 
+        ]
     }
 };

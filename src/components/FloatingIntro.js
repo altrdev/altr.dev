@@ -126,8 +126,8 @@ class FloatingIntro extends Component {
                       <Toolbar className={classes.toolbar}>
                         <div style={{margin: 'auto'}}>
                           {properties.floatingIntro.icons.map(icon => (
-                              <Link key={icon.id} href={icon.link} target="_blank" rel="noopener" color="inherit" className={classes.link}>
-                                <Icon path={icon.name} size={1.2} className={classes.icon}/>
+                              <Link key={icon.id} href={icon.value} target="_blank" rel="noopener" color="inherit" className={classes.link}>
+                                <Icon path={icon.label} size={1.2} className={classes.icon}/>
                               </Link>
                           ))}
                         </div>
