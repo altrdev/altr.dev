@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FloatingIntro from './components/FloatingIntro';
 import ParallaxBackground from './components/ParallaxBackground';
-import ContentResume from './components/ContentResume';
+import ContentResume from './components/content/ContentResume';
 import Footer from './components/Footer';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
