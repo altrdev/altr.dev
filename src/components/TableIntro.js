@@ -5,7 +5,7 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
-import Obfuscate from 'react-obfuscate'
+import { properties } from '../properties';
 
 const styles = theme => ({
     table: {
@@ -29,19 +29,6 @@ const styles = theme => ({
     }
 });
 
-let id = 0;
-function createData(title, value) {
-  id += 1;
-  return { id, title, value };
-}
-
-const rows = [
-  createData("Age", 29),
-  createData("Country", "Como Lake, Italy"),
-  createData("Email", <Obfuscate email="alessandro.travi+dev@gmail.com"/>),
-  createData("Website", "https://altr.dev")
-];
-
 class TableIntro extends Component {
 
     render(){
@@ -49,10 +36,10 @@ class TableIntro extends Component {
         return (
             <Table className={classes.table}>
                 <TableBody>
-                {rows.map(row => (
+                {properties.floatingIntro.tableRows.map(row => (
                     <TableRow key={row.id} className={classes.tableRow}>
                         <TableCell component="th" scope="row" style={{fontWeight: 800, width: 100}} className={classes.tableCell}>
-                            {row.title}
+                            {row.label}
                         </TableCell>
                         <TableCell align="left" className={classes.tableCell}>
                             {row.value}
