@@ -9,6 +9,9 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Title from './ContentTitle';
+import Timeline from './Timeline';
+import TimelineItem from './TimelineItem';
+
 import { properties } from '../../properties';
 
 const styles = theme => ({
@@ -16,7 +19,8 @@ const styles = theme => ({
         width: 'auto',
         marginLeft: theme.spacing.unit * 2,
         marginRight: theme.spacing.unit * 2,
-        height: 1000,
+        marginBottom: theme.spacing.unit * 10,
+        height: "100%",
         fontSize: '1rem',
         textAlign: "center",
         paddingTop:20,
@@ -55,6 +59,13 @@ const styles = theme => ({
     },
     progress: {
         height: 6
+    },
+    timelineBox: {
+        padding: theme.spacing.unit * 2,
+        [theme.breakpoints.up(600 + theme.spacing.unit * 3 * 2)]: {
+          padding: theme.spacing.unit * 3
+        },
+        borderLeft: 3
     }
 });
 
@@ -106,9 +117,11 @@ class ContentResume extends Component {
                         </Grid>
                     </Paper>
                     <Title value={properties.titles.experience} />
-                    <Typography variant="body1" align="center">
-                        Under construction
-                    </Typography>
+                    <Timeline>
+                    {properties.content.workExperience.map((experience, i) => {
+                        return <TimelineItem key={i} date={experience.date} title={experience.title} description={experience.description} company={experience.company} />
+                    })}
+                    </Timeline>
                     <Title value={properties.titles.education} />
                     <Typography variant="body1" align="center">
                         Under construction
