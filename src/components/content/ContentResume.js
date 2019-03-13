@@ -66,7 +66,14 @@ const styles = theme => ({
           padding: theme.spacing.unit * 3
         },
         borderLeft: 3
-    }
+    },
+    borderTop:{
+        borderTop: `4px solid ${theme.palette.primary.main}`
+    },
+    projectTitle: {
+        fontWeight: 600,
+        marginBottom: theme.spacing.unit
+    },
 });
 
 class ContentResume extends Component {
@@ -118,14 +125,27 @@ class ContentResume extends Component {
                     </Paper>
                     <Title value={properties.titles.experience} />
                     <Timeline>
-                    {properties.content.workExperience.map((experience, i) => {
-                        return <TimelineItem key={i} date={experience.date} title={experience.title} description={experience.description} company={experience.company} />
-                    })}
+                        {properties.content.workExperience.map((experience, i) => {
+                            return <TimelineItem key={i} date={experience.date} title={experience.title} description={experience.description} company={experience.company} />
+                        })}
                     </Timeline>
                     <Title value={properties.titles.education} />
-                    <Typography variant="body1" align="center">
-                        Under construction
-                    </Typography>
+                    <Timeline>
+                        {properties.content.educations.map((education, i) => {
+                            return <TimelineItem key={i} date={education.date} title={education.title} company={education.company} />
+                        })}
+                    </Timeline>
+                    <Title value={properties.titles.projects} />
+                    <Grid container spacing={16}>
+                        {properties.content.personalProjects.map(project => (
+                            <Grid key={project.id} item xs={12} sm={4}>
+                                <Paper className={`${classes.mainPaper} ${classes.borderTop}`} style={{height: "100%"}}>
+                                    <Typography variant="h6" align="left" className={classes.projectTitle}>{project.label}</Typography>
+                                    <Typography variant="body1" align="left" style={{whiteSpace: "pre-wrap"}}>{project.value}</Typography>
+                                </Paper>
+                            </Grid>
+                        ))}
+                    </Grid>
                 </div>
             </React.Fragment>
         );
