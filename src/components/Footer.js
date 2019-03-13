@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import ScrollButton from './ScrollButton';
 import Typography from '@material-ui/core/Typography';
+import { properties } from '../properties';
 
 const styles = theme => ({
     appBar: {
@@ -38,7 +39,7 @@ class Footer extends Component {
                     <Toolbar className={classes.toolbar}>
                         <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
                         <Typography variant="subtitle1" align="center" className={classes.infoFooter}>
-                            ©2019 - Alessandro Travi
+                            {properties.footer.text}
                         </Typography>
                     </Toolbar>
                 </AppBar>

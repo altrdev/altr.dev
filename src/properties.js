@@ -16,6 +16,9 @@ export const properties = {
         skills: "Skills",
         projects: "Personal Projects"
     },
+    footer:{
+        text: "©2019 - altrdev"
+    },
     floatingIntro: {
         name: "Alessandro Travi",
         workTitle: "Crazy Software Engineer",
@@ -89,13 +92,38 @@ export const properties = {
             },
         ],
         personalProjects: [
-            createData("Amazon Alexa", "Home assistant skills development.\nLanguage used: NodeJs"),
-            createData("Ho l’utility", "Android app that allows Ho. Mobile users to have a widget on their homescreens. \nLanguage used: Kotlin. Unique users: 8.000"),
-            createData("Cesare Triaca", "Web site creation for a local artist with dynamic upload of pictures of his artwork taken from Dropbox.\nLanguages used: HTML5, JS"),
-            createData("Contraceptive Ring (inactive)", "Android app to track contraceptive ring usage.\nLanguage used: Java. Unique users: 49.000"),
-            createData("3D Printing", "3d print DIY assembling on Josef Prusa model \nFew projects to be found on Thingiverse (altr_dev)"),
-            createData("TriggerT", "Little trigger that allows to take pictures when some particular events happens (thunderbolt, animals passing by, sudden noises, etc).\nBuilt on Arduino"),
-            createData("Home automation", "Automatic sunblinds movement depending on particular weather conditions such as wind, rain, direct sun, etc. The core is an Arduino which can be controlled through Android app.")
+            {
+                title: "Amazon Alexa",
+                description:"Home assistant skills development.\nLanguage used: NodeJs"
+            },
+            {
+                title: "Ho l’utility",
+                link: "https://play.google.com/store/apps/details?id=com.filobot.houtility&hl=it",
+                description: "Android app that allows Ho. Mobile users to have a widget on their homescreens. \nLanguage used: Kotlin. Unique users: 8.000"
+            },
+            {
+                title: "Cesare Triaca",
+                link: "http://cesaretriaca.com/",
+                description: "Web site creation for a local artist with dynamic upload of pictures of his artwork taken from Dropbox.\nLanguages used: HTML5, JS"
+            },
+            {
+                title: "Contraceptive Ring (inactive)",
+                link: "https://play.google.com/store/apps/details?id=com.travis.anelloanticoncezionale&hl=en-ca",
+                description: "Android app to track contraceptive ring usage.\nLanguage used: Java. Unique users: 49.000"
+            },
+            {
+                title: "3D Printing",
+                link: "https://www.thingiverse.com/altr_dev/about",
+                description: "3d print DIY assembling on Josef Prusa model \nFew projects to be found on Thingiverse (altr_dev)"
+            },
+            {
+                title: "TriggerT",
+                description: "Little trigger that allows to take pictures when some particular events happens (thunderbolt, animals passing by, sudden noises, etc).\nBuilt on Arduino"
+            },
+            {
+                title: "Home automation",
+                description: "Automatic sunblinds movement depending on particular weather conditions such as wind, rain, direct sun, etc. The core is an Arduino which can be controlled through Android app."
+            }
         ]
     }
 };
