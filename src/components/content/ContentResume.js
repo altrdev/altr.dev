@@ -3,6 +3,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import Paper from '@material-ui/core/Paper';
@@ -11,6 +12,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Title from './ContentTitle';
 import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
+import LinkIcon from '@material-ui/icons/Link';
 
 import { properties } from '../../properties';
 
@@ -73,6 +75,9 @@ const styles = theme => ({
     projectTitle: {
         fontWeight: 600,
         marginBottom: theme.spacing.unit
+    },
+    marginIcon: {
+        marginLeft: theme.spacing.unit
     },
 });
 
@@ -137,14 +142,21 @@ class ContentResume extends Component {
                     </Timeline>
                     <Title value={properties.titles.projects} />
                     <Grid container spacing={16}>
-                        {properties.content.personalProjects.map(project => (
-                            <Grid key={project.id} item xs={12} sm={4}>
+                        {properties.content.personalProjects.map((project, i) => {
+                            return <Grid key={i} item xs={12} sm={4}>
                                 <Paper className={`${classes.mainPaper} ${classes.borderTop}`} style={{height: "100%"}}>
-                                    <Typography variant="h6" align="left" className={classes.projectTitle}>{project.label}</Typography>
-                                    <Typography variant="body1" align="left" style={{whiteSpace: "pre-wrap"}}>{project.value}</Typography>
+                                    <Typography variant="h6" align="left" className={classes.projectTitle}>
+                                        {project.title}
+                                        {project.link ? 
+                                            <IconButton aria-label="Link" color="primary" href={project.link} target="_blank" className={classes.marginIcon}>
+                                                <LinkIcon fontSize="small" />
+                                            </IconButton>
+                                        : null}
+                                    </Typography>
+                                    <Typography variant="body1" align="left" style={{whiteSpace: "pre-wrap"}}>{project.description}</Typography>
                                 </Paper>
                             </Grid>
-                        ))}
+                        })}
                     </Grid>
                 </div>
             </React.Fragment>
