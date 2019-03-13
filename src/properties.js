@@ -37,7 +37,7 @@ export const properties = {
         ]
     },
     content: {
-        cv_link: "https://drive.google.com/file/d/1aQQRsodHn1qRlHcnAgElRyENFE-ydNF_/view?usp=sharing",
+        cv_link: "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_cOe8WyJvwj0Jn-cmHZYplzdJk8izdDVI9O38L8fgIY/export?format=pdf",
         labels: {
             download: "Download resume"
         },
