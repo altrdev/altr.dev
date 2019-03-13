@@ -77,7 +77,6 @@ TimelineItem.propTypes = {
     classes: PropTypes.object.isRequired,
     company: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired
 };
   
