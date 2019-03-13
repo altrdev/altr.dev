@@ -108,7 +108,6 @@ export const properties = {
             },
             {
                 title: "Contraceptive Ring (inactive)",
-                link: "https://play.google.com/store/apps/details?id=com.travis.anelloanticoncezionale&hl=en-ca",
                 description: "Android app to track contraceptive ring usage.\nLanguage used: Java. Unique users: 49.000"
             },
             {
