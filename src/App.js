@@ -55,30 +55,33 @@ class App extends Component {
   }
 
   componentDidMount(){
-    setTimeout(() => {
+    
       this.setState({loading: false})
-    }, 1500)
+    
   }
   
   render() {
     const { classes } = this.props;
 
-    let content = 
-      this.state.loading 
-      ?
-      <MuiThemeProvider theme={theme}>
-        <React.Fragment>
-          <div style={{width: "100%", height: "100vh"}}>
-            <div className={classes.containerDiv}>
-              <CircularProgress className={classes.progress} />
-              <Typography variant="subtitle1" align="center" color="textSecondary" className={classes.loading}>
-                Loading Resume ...
-              </Typography>
+    if(this.state.loading){
+      console.log("Loading...");
+      return( 
+        <MuiThemeProvider theme={theme}>
+          <React.Fragment>
+            <div style={{width: "100%", height: "100vh"}}>
+              <div className={classes.containerDiv}>
+                <CircularProgress className={classes.progress} />
+                <Typography variant="subtitle1" align="center" color="textSecondary" className={classes.loading}>
+                  Loading Resume ...
+                </Typography>
+              </div>
             </div>
-          </div>
-        </React.Fragment>
-      </MuiThemeProvider>
-      :
+          </React.Fragment>
+        </MuiThemeProvider>
+      );
+    }
+
+    return (
       <MuiThemeProvider theme={theme}>
         <React.Fragment>
           <div className="animateLoading">
@@ -91,8 +94,6 @@ class App extends Component {
           </div>
         </React.Fragment>
       </MuiThemeProvider>
-    return (
-      content
     );
   }
 }
