@@ -54,8 +54,14 @@ export const properties = {
             createData("Solidity", 75) 
         ],
         workExperience:[
+            {
+                date: "2019 – now",
+                title: "Software Engineer",
+                company: "Xpeppers Sagl (Claranet Factory)",
+                description: "Requirements analysis and software development."
+            },
             {   
-                date: "2016 – now",
+                date: "2016 – 2019",
                 title: "Software Engineer",
                 company: "Mondora srl sb (TeamSystem Factory)",
                 description: "Requirements analysis and software development. Team working remotely with Agile methodologies (SCRUM and Kanban).\nMain projects:\n- Management software development for a finance client (H14),linked with Bloomberg. All microservices run on AWS Elastic Beanstalk (PaaS)\n- Software development for TeamSystem's product AGYO(e-invoice). Docker microservices orchestrated by Kubernetes and CI with Jenkins. All resources on Azure\n- Timestamping proof on ETH blockchain (Solidity smart contracts), exposed through APIs limited by Azure API Gateway.\nMain languages: Java with Springboot, NodeJs, Grails (Groovy), Kotlin, ReactJs\nOther: FaaS both on AWS (Lambda) and Azure (Functions, LogicApp)"
