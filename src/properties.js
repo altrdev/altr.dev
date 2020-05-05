@@ -99,6 +99,11 @@ export const properties = {
         ],
         personalProjects: [
             {
+                title: "Thook",
+                link: "https://thook.altr.dev",
+                description: "Simply receive notifications in Telegram. \nEntire Serverless project with Firebase Functions(Typescript), Firestore and Hosting"
+            },
+            {
                 title: "Amazon Alexa",
                 description:"Home assistant skills development.\nLanguage used: NodeJs"
             },

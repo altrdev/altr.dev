@@ -5,6 +5,7 @@ cache:
   directories:
     - node_modules
 script:
+  - export COMMITTER_NAME=$(git log --pretty='%cn' -n1 HEAD)
   - npm run build
 
 deploy:
@@ -16,24 +17,8 @@ deploy:
   on:
     branch: master
 
-test:
-  - test
-
 after_success:
-  - > 
-    curl
-    -X POST ${WEBHOOK_TELEGRAM}
-    -H 'Content-Type: text/plain'
-    -H "X-Webhook-Signature: ${WEBHOOK_SIGNATURE}"
-    --data-raw $'*TravisCI* success \n*Bello come non mai*'
+  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p altr-dev -r success -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
 
 after_failure:
-  - > 
-    curl
-    -X POST ${WEBHOOK_TELEGRAM}
-    -H 'Content-Type: text/plain'
-    -H "X-Webhook-Signature: ${WEBHOOK_SIGNATURE}"
-    --data-raw $'*TravisCI* failure \n*Brutto come non mai*'
-    
-    
-
+  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p altr-dev -r failure -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
