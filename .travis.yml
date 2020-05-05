@@ -6,6 +6,7 @@ cache:
     - node_modules
 script:
   - export COMMITTER_NAME=$(git log --pretty='%cn' -n1 HEAD)
+  - export PROJECT_NAME="altr.dev"
   - npm run build
 
 deploy:
@@ -18,7 +19,7 @@ deploy:
     branch: master
 
 after_success:
-  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p altr-dev -r success -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
+  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p ${PROJECT_NAME} -r success -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
 
 after_failure:
-  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p altr-dev -r failure -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
+  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p ${PROJECT_NAME} -r failure -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
