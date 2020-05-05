@@ -30,7 +30,7 @@ export const properties = {
             createData(mdiTwitter, "https://twitter.com/altrdev")
         ],
         tableRows: [
-            createData("Age", 29),
+            createData("Age", 30),
             createData("Country", "Como Lake, Italy"),
             createData("Email", <Obfuscate email="alessandro.travi+dev@gmail.com"/>),
             createData("Website", "https://altr.dev")
