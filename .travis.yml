@@ -21,19 +21,18 @@ test:
 
 after_success:
   - > 
-    curl -X POST $WEBHOOK_TELEGRAM -H 'Content-Type: text/plain' \
+    "curl -X POST $WEBHOOK_TELEGRAM -H 'Content-Type: text/plain' \
     -H 'X-Webhook-Signature: $WEBHOOK_SIGNATURE' --data-raw \
     '*TravisCI* success
-    *Bello come non mai*
-    '
+    *Bello come non mai*'"
 
 after_failure:
   - > 
-    curl -X POST $WEBHOOK_TELEGRAM -H 'Content-Type: text/plain' \
+    "curl -X POST $WEBHOOK_TELEGRAM -H 'Content-Type: text/plain' \
     -H 'X-Webhook-Signature: $WEBHOOK_SIGNATURE' --data-raw \
     '*TravisCI* failed
     *Brutto come non mai*
-    '
+    '"
     
     
 
