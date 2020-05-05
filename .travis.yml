@@ -24,7 +24,7 @@ after_success:
     curl
     -X POST ${WEBHOOK_TELEGRAM}
     -H 'Content-Type: text/plain'
-    -H 'X-Webhook-Signature: ${WEBHOOK_SIGNATURE}'
+    -H "X-Webhook-Signature: ${WEBHOOK_SIGNATURE}"
     --data-raw $'*TravisCI* success \n*Bello come non mai*'
 
 after_failure:
@@ -32,7 +32,7 @@ after_failure:
     curl
     -X POST ${WEBHOOK_TELEGRAM}
     -H 'Content-Type: text/plain'
-    -H 'X-Webhook-Signature: ${WEBHOOK_SIGNATURE}'
+    -H "X-Webhook-Signature: ${WEBHOOK_SIGNATURE}"
     --data-raw $'*TravisCI* failure \n*Brutto come non mai*'
     
     
