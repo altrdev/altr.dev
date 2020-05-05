@@ -10,7 +10,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token: ${GITHUB_TOKEN}
   local_dir: build
   keep_history: true
   on:
@@ -22,17 +22,17 @@ test:
 after_success:
   - > 
     curl
-    -X POST $WEBHOOK_TELEGRAM
+    -X POST ${WEBHOOK_TELEGRAM}
     -H 'Content-Type: text/plain'
-    -H 'X-Webhook-Signature: $WEBHOOK_SIGNATURE'
-    --data-raw $'*TravisCI* failure \n*Bello come non mai*'
+    -H 'X-Webhook-Signature: ${WEBHOOK_SIGNATURE}'
+    --data-raw $'*TravisCI* success \n*Bello come non mai*'
 
 after_failure:
   - > 
     curl
-    -X POST $WEBHOOK_TELEGRAM
+    -X POST ${WEBHOOK_TELEGRAM}
     -H 'Content-Type: text/plain'
-    -H 'X-Webhook-Signature: $WEBHOOK_SIGNATURE'
+    -H 'X-Webhook-Signature: ${WEBHOOK_SIGNATURE}'
     --data-raw $'*TravisCI* failure \n*Brutto come non mai*'
     
     
