@@ -32,7 +32,7 @@ export const properties = {
         tableRows: [
             createData("Age", 30),
             createData("Country", "Como Lake, Italy"),
-            createData("Email", <Obfuscate email="alessandro.travi+dev@gmail.com"/>),
+            createData("Email", <Obfuscate email="info@altr.dev"/>),
             createData("Website", "https://altr.dev")
         ]
     },
