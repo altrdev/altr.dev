@@ -27,4 +27,4 @@ fi
 curl -X POST ${WEBHOOK} \
 -H 'Content-Type: text/plain' \
 -H "X-Webhook-Signature: ${SIGN}" \
---data-raw $'👨‍🔧 *Travis CI* \n\n🔖 *Project:* '"${PROJECT}"$' \n'"${STATE}"$' \n🏷 *Ref:* '"${BRANCH}"$' \n👤 Triggered by *'"${AUTHOR}"'*'
+--data-raw $'👨‍🔧 *Travis CI* \n\n🔖 *Project:* '"${PROJECT}"$' \n'"${STATE}"$' \n🏷 *Ref:* '"${BRANCH}"$' \n\n👤 Triggered by *'"${AUTHOR}"'*'
