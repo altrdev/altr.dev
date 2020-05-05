@@ -17,7 +17,7 @@ export const properties = {
         projects: "Personal Projects"
     },
     footer:{
-        text: "©2019 - altrdev"
+        text: "©2020 - altrdev"
     },
     floatingIntro: {
         name: "Alessandro Travi",
