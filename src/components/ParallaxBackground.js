@@ -8,7 +8,7 @@ const styles = theme => ({
     parallax: {
         /* The image used */
         backgroundImage: `url(${Background})`,
-        minHeight: 500,
+        minHeight: 400,
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
