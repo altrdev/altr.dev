@@ -27,7 +27,7 @@ const styles = theme => ({
       }
     },
     floatingPaper: {
-      marginTop: - theme.spacing.unit * 30,
+      marginTop: - theme.spacing.unit *30,
       //marginBottom: theme.spacing.unit * 3,
       padding: theme.spacing.unit * 2,
       opacity: 0.99,
