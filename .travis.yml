@@ -5,6 +5,8 @@ cache:
   directories:
     - node_modules
 script:
+  - curl https://gist.githubusercontent.com/altrdev/9a4fd3b1b1be58a4323d37fd11838b7c/raw/60f0079455ba1ffdcf40002e852253bc1f0c865b/travis_to_thook.sh > travis_to_thook.sh  
+  - chmod +x travis_to_thook.sh 
   - export COMMITTER_NAME=$(git log --pretty='%cn' -n1 HEAD)
   - export PROJECT_NAME="altr.dev"
   - npm run build
@@ -19,7 +21,8 @@ deploy:
     branch: master
 
 after_success:
-  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p ${PROJECT_NAME} -r success -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
+  - ./travis_to_thook.sh -i ${THOOK_ID} -s ${THOOK_SIGNATURE} -p ${PROJECT_NAME} -t success -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
 
 after_failure:
-  - ./telegamNotify.sh -w ${WEBHOOK_TELEGRAM} -s ${WEBHOOK_SIGNATURE} -p ${PROJECT_NAME} -r failure -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
+  - ./travis_to_thook.sh -i ${THOOK_ID} -s ${THOOK_SIGNATURE} -p ${PROJECT_NAME} -t failure -b ${TRAVIS_BRANCH} -a ${COMMITTER_NAME}
+
