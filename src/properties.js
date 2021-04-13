@@ -30,7 +30,7 @@ export const properties = {
             createData(mdiTwitter, "https://twitter.com/altrdev")
         ],
         tableRows: [
-            createData("Age", 30),
+            createData("Age", 31),
             createData("Country", "Como Lake, Italy"),
             createData("Email", <Obfuscate email="info@altr.dev"/>),
             createData("Website", "https://altr.dev")
@@ -51,16 +51,16 @@ export const properties = {
             createData("Springboot", 90),
             createData("Docker", 85),
             createData("MongoDB", 87),
-            createData("Solidity", 75) 
+            createData("Solidity", 75)
         ],
         workExperience:[
             {
-                date: "2019 – now",
-                title: "Software Engineer",
-                company: "Xpeppers Sagl (Claranet Factory)",
-                description: "Requirements analysis and software development."
+                date: "2019 – 2021",
+                title: "DevOPS Engineer",
+                company: "Claranet CH",
+                description: "Requirements analysis and DevOps development. Create IaC infrastructure with Terraform, Cloudformation and CDK. \nWorking on Serverless Projects(AWS and Azure) and Flutter mobile application"
             },
-            {   
+            {
                 date: "2016 – 2019",
                 title: "Software Engineer",
                 company: "Mondora srl sb (TeamSystem Factory)",
@@ -86,12 +86,12 @@ export const properties = {
             }
         ],
         educations: [
-            {   
+            {
                 date: "2014",
                 title: "ITIL Foundation",
                 company: "APMG-International"
             },
-            {   
+            {
                 date: "2004 – 2010",
                 title: "High School Diploma Perito Informatico",
                 company: "ITIS Enea Mattei (SO)"
@@ -102,6 +102,11 @@ export const properties = {
                 title: "Thook",
                 link: "https://thook.altr.dev",
                 description: "Simply receive notifications in Telegram. \nEntire Serverless project with Firebase Functions(Typescript), Firestore and Hosting"
+            },
+            {
+                title: "Ed25519",
+                link: "https://github.com/altrdev/ed25519-verify",
+                description: "Simple webapp for checking Ed25519 elliptic curve signing algorithm. \nLanguage used: Typescript on SvelteJs Framework"
             },
             {
                 title: "Amazon Alexa",
