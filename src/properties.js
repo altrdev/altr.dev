@@ -14,7 +14,7 @@ export const properties = {
         experience: "Experience",
         education: "Education",
         skills: "Skills",
-        projects: "Personal Projects"
+        projects: "Side Projects"
     },
     footer:{
         text: "©2020 - altrdev"
