@@ -9,14 +9,14 @@ const styles = theme => ({
          backgroundColor: theme.palette.primary.main,
          width: 50,
          height: 3,
-         marginBottom: theme.spacing.unit
-     }  
+         marginBottom: theme.spacing(1)
+     }
 });
 
 class CustomDivider extends Component {
     render() {
         const { classes } = this.props;
-        return (   
+        return (
             <Divider variant="fullWidth" className={classes.divider}/>
         );
     }
@@ -25,5 +25,5 @@ class CustomDivider extends Component {
 CustomDivider.propTypes = {
     classes: PropTypes.object.isRequired,
   };
-  
+
 export default withStyles(styles) (CustomDivider);

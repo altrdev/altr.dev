@@ -9,7 +9,7 @@ import { properties } from '../properties';
 
 const styles = theme => ({
     table: {
-        marginTop: theme.spacing.unit,
+        marginTop: theme.spacing(1),
         tableLayout: "fixed"
     },
     tableCell: {
@@ -50,7 +50,7 @@ class TableIntro extends Component {
             </Table>
         );
     }
-  
+
 }
 
 TableIntro.propTypes = {

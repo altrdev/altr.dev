@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
     title: {
         fontWeight: 600,
-        margin: theme.spacing.unit * 6,
+        margin: theme.spacing(6),
         letterSpacing: 2,
         textTransform: 'uppercase',
         textAlign: 'center'
@@ -25,12 +25,12 @@ class ContentTitle extends Component {
                 </Typography>
             </React.Fragment>
         );
-    } 
+    }
 }
 
 ContentTitle.propTypes = {
     classes: PropTypes.object.isRequired,
     value: PropTypes.string.isRequired
   };
-  
+
 export default withStyles(styles) (ContentTitle);

@@ -27,23 +27,23 @@ const theme = createMuiTheme({
 
 const styles = theme => ({
   progress: {
-    display: "block", 
-    justifyContent: "center", 
+    display: "block",
+    justifyContent: "center",
     margin: "auto"
   },
   containerDiv: {
-    height: 200, 
-    position: "absolute", 
-    margin: "auto", 
-    top: 0, 
-    right: 0, 
-    bottom: 0, 
-    left: 0, 
-    letterSpacing: 2, 
+    height: 200,
+    position: "absolute",
+    margin: "auto",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    letterSpacing: 2,
     textTransform: 'uppercase'
   },
   loading: {
-    marginTop: theme.spacing.unit
+    marginTop: theme.spacing(1)
   }
 });
 
@@ -55,17 +55,17 @@ class App extends Component {
   }
 
   componentDidMount(){
-    
+
       this.setState({loading: false})
-    
+
   }
-  
+
   render() {
     const { classes } = this.props;
 
     if(this.state.loading){
       console.log("Loading...");
-      return( 
+      return(
         <MuiThemeProvider theme={theme}>
           <React.Fragment>
             <div style={{width: "100%", height: "100vh"}}>

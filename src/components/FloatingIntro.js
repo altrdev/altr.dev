@@ -18,28 +18,28 @@ import { properties } from '../properties';
 const styles = theme => ({
     layout: {
       width: 'auto',
-      marginLeft: theme.spacing.unit * 2,
-      marginRight: theme.spacing.unit * 2,
-      [theme.breakpoints.up(1200 + theme.spacing.unit * 2 * 2)]: {
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.up(1200 + theme.spacing(4))]: {
         width: 1200,
         marginLeft: 'auto',
         marginRight: 'auto',
       }
     },
     floatingPaper: {
-      marginTop: - theme.spacing.unit *30,
+      marginTop: - theme.spacing(30),
       //marginBottom: theme.spacing.unit * 3,
-      padding: theme.spacing.unit * 2,
+      padding: theme.spacing(2),
       opacity: 0.99,
       borderRadius: 0,
-      [theme.breakpoints.up(600 + theme.spacing.unit * 3 * 2)]: {
+      [theme.breakpoints.up(600 + theme.spacing(6))]: {
         //marginTop: - theme.spacing.unit * 30,
         //marginBottom: theme.spacing.unit * 6,
-        padding: theme.spacing.unit * 3
+        padding: theme.spacing(3)
       }
     },
     paper: {
-      padding: theme.spacing.unit * 2,
+      padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
       boxShadow: 'none'
@@ -57,29 +57,29 @@ const styles = theme => ({
       margin: 'auto',
       width: 230,
       height: 230,
-      marginBottom: theme.spacing.unit * 2,
+      marginBottom: theme.spacing(2),
     },
     name: {
       fontWeight: 800,
-      marginBottom: theme.spacing.unit,
+      marginBottom: theme.spacing(1),
       textTransform: 'uppercase',
       letterSpacing: 2
     },
     work: {
       fontWeight: 600,
-      marginBottom: theme.spacing.unit,
+      marginBottom: theme.spacing(1),
       textTransform: 'uppercase',
       letterSpacing: 2
     },
     title: {
       fontWeight: 600,
-      marginBottom: theme.spacing.unit * 0.5,
+      marginBottom: theme.spacing(0.5),
       letterSpacing: 2,
       textTransform: 'uppercase',
     },
     description: {
-      marginBottom: theme.spacing.unit * 5,
-      height: '100%' 
+      marginBottom: theme.spacing(5),
+      height: '100%'
     },
     icon: {
       fill: theme.palette.primary.contrastText,
@@ -96,7 +96,7 @@ class FloatingIntro extends Component {
                 <CssBaseline/>
                 <main className={classes.layout}>
                     <Paper className={classes.floatingPaper}>
-                      <Grid container spacing={16}>
+                      <Grid container spacing={3}>
                         <Grid item xs={12} sm={6}>
                           <Paper className={classes.paper}>
                             <Avatar alt="Alessandro Travi" src={AvatarImage} className={classes.bigAvatar} />
@@ -142,5 +142,5 @@ class FloatingIntro extends Component {
 FloatingIntro.propTypes = {
     classes: PropTypes.object.isRequired,
 };
-  
+
 export default withStyles(styles) (FloatingIntro);
