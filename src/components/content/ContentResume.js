@@ -19,36 +19,36 @@ import { properties } from '../../properties';
 const styles = theme => ({
     layout: {
         width: 'auto',
-        marginLeft: theme.spacing.unit * 2,
-        marginRight: theme.spacing.unit * 2,
-        marginBottom: theme.spacing.unit * 10,
+        marginLeft: theme.spacing(2),
+        marginRight: theme.spacing(2),
+        marginBottom: theme.spacing(10),
         height: "100%",
         fontSize: '1rem',
         textAlign: "center",
         paddingTop:20,
-        [theme.breakpoints.up(1200 + theme.spacing.unit * 2 * 2)]: {
+        [theme.breakpoints.up(1200 + theme.spacing(4))]: {
           width: 1200,
           marginLeft: 'auto',
           marginRight: 'auto',
         }
     },
     extendedIcon: {
-        marginRight: theme.spacing.unit
+        marginRight: theme.spacing(1)
     },
     mainPaper: {
-        padding: theme.spacing.unit * 2,
-        [theme.breakpoints.up(600 + theme.spacing.unit * 3 * 2)]: {
-          padding: theme.spacing.unit * 3
+        padding: theme.spacing(2),
+        [theme.breakpoints.up(600 + theme.spacing(6))]: {
+          padding: theme.spacing(3)
         }
     },
     paper: {
-        padding: theme.spacing.unit * 2,
+        padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
         boxShadow: 'none'
     },
     progressWrapper: {
-        marginTop: theme.spacing.unit * 4,
+        marginTop: theme.spacing(4),
         textAlign: 'left'
     },
     spanPercentage: {
@@ -63,9 +63,9 @@ const styles = theme => ({
         height: 6
     },
     timelineBox: {
-        padding: theme.spacing.unit * 2,
-        [theme.breakpoints.up(600 + theme.spacing.unit * 3 * 2)]: {
-          padding: theme.spacing.unit * 3
+        padding: theme.spacing(2),
+        [theme.breakpoints.up(600 + theme.spacing(6))]: {
+          padding: theme.spacing(3)
         },
         borderLeft: 3
     },
@@ -74,10 +74,10 @@ const styles = theme => ({
     },
     projectTitle: {
         fontWeight: 600,
-        marginBottom: theme.spacing.unit
+        marginBottom: theme.spacing(1)
     },
     marginIcon: {
-        marginLeft: theme.spacing.unit
+        marginLeft: theme.spacing(1)
     },
 });
 
@@ -99,7 +99,7 @@ class ContentResume extends Component {
                     </Fab>
                     <Title value={properties.titles.skills} />
                     <Paper className={classes.mainPaper}>
-                        <Grid container spacing={16}>
+                        <Grid container spacing={1}>
                             <Grid item xs={12} sm={6}>
                                 <Paper className={classes.paper}>
                                     {properties.content.skillsLanguage.map(skill => (
@@ -107,7 +107,7 @@ class ContentResume extends Component {
                                             <Typography variant="body1" align="left" className={classes.descriptionLabel}>
                                                 {skill.label}
                                                 <span className={classes.spanPercentage}>{skill.value}%</span>
-                                            </Typography>        
+                                            </Typography>
                                             <LinearProgress variant="determinate" value={skill.value} className={classes.progress}/>
                                         </div>
                                     ))}
@@ -120,7 +120,7 @@ class ContentResume extends Component {
                                             <Typography variant="body1" align="left" className={classes.descriptionLabel}>
                                                 {skill.label}
                                                 <span className={classes.spanPercentage}>{skill.value}%</span>
-                                            </Typography>        
+                                            </Typography>
                                             <LinearProgress variant="determinate" value={skill.value} className={classes.progress}/>
                                         </div>
                                     ))}
@@ -141,13 +141,13 @@ class ContentResume extends Component {
                         })}
                     </Timeline>
                     <Title value={properties.titles.projects} />
-                    <Grid container spacing={16}>
+                    <Grid container spacing={3}>
                         {properties.content.personalProjects.map((project, i) => {
                             return <Grid key={i} item xs={12} sm={4}>
                                 <Paper className={`${classes.mainPaper} ${classes.borderTop}`} style={{height: "100%"}}>
                                     <Typography variant="h6" align="left" className={classes.projectTitle}>
                                         {project.title}
-                                        {project.link ? 
+                                        {project.link ?
                                             <IconButton aria-label="Link" color="primary" href={project.link} target="_blank" className={classes.marginIcon}>
                                                 <LinkIcon fontSize="small" />
                                             </IconButton>
@@ -161,11 +161,11 @@ class ContentResume extends Component {
                 </div>
             </React.Fragment>
         );
-    } 
+    }
 }
 
 ContentResume.propTypes = {
     classes: PropTypes.object.isRequired,
   };
-  
+
 export default withStyles(styles) (ContentResume);

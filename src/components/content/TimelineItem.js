@@ -42,12 +42,12 @@ const styles = theme => ({
     },
     title: {
         fontWeight: 600,
-        marginBottom: theme.spacing.unit
+        marginBottom: theme.spacing(1)
     },
     date: {
         fontWeight: 400,
         color: theme.palette.text.secondary,
-        float: 'right', 
+        float: 'right',
         textAlign: 'right'
     },
 });
@@ -68,7 +68,7 @@ class TimelineItem extends Component {
                 </li>
             </React.Fragment>
         );
-    } 
+    }
 }
 
 
@@ -79,7 +79,7 @@ TimelineItem.propTypes = {
     title: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired
 };
-  
+
 export default withStyles(styles) (TimelineItem);
 
 
