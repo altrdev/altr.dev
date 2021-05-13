@@ -31,12 +31,12 @@ export default class Layout extends React.Component {
                     <link rel="manifest" href="./manifest.json" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+                    <script id="CookieDeclaration" src="https://consent.cookiebot.com/800b48d7-e6d0-4aac-b9ac-94d622bdac24/cd.js" type="text/javascript" async />
                     <title>{ title }</title>
                 </Head>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
                     { children }
-                    <script id="CookieDeclaration" src="https://consent.cookiebot.com/800b48d7-e6d0-4aac-b9ac-94d622bdac24/cd.js" type="text/javascript" async />
                     <Footer data={properties}/>
                 </ThemeProvider>
             </>
