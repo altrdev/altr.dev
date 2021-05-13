@@ -6,7 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import ScrollButton from './ScrollButton';
 import Typography from '@material-ui/core/Typography';
-import { properties } from '../properties';
+import { properties } from '../utils/properties';
 
 const styles = theme => ({
     appBar: {

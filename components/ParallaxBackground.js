@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Background from '../images/background_image.jpg';
+import Background from '../public/images/background_image.jpg';
 
 const styles = theme => ({
     parallax: {
