@@ -14,7 +14,7 @@ import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
 import LinkIcon from '@material-ui/icons/Link';
 
-import { properties } from '../../properties';
+import { properties } from '../../utils/properties';
 
 const styles = theme => ({
     layout: {

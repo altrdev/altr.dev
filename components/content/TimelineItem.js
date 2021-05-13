@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 
-import '../../timeline.css';
-
 const styles = theme => ({
 
     event: {

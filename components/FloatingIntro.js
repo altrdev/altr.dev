@@ -11,9 +11,9 @@ import Link from '@material-ui/core/Link';
 import CustomDivider from './CustomDivider';
 import TableIntro from './TableIntro';
 import Icon from '@mdi/react'
-import AvatarImage from '../images/Profile_square.jpg';
+import AvatarImage from '../public/images/Profile_square.jpg';
 import Typography from '@material-ui/core/Typography';
-import { properties } from '../properties';
+import { properties } from '../utils/properties';
 
 const styles = theme => ({
     layout: {
