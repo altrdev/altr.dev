@@ -2,6 +2,9 @@ import Layout from "../components/Layout";
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import '../styles/animate.css'
+import '../styles/timeline.css'
+
 export default function MyApp(props) {
     const { Component, pageProps } = props;
 
