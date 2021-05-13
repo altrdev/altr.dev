@@ -1,44 +1,42 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
-import { properties } from '../utils/properties';
+import {createStyles, makeStyles} from "@material-ui/core";
 
-const styles = theme => ({
-    table: {
-        marginTop: theme.spacing(1),
-        tableLayout: "fixed"
-    },
-    tableCell: {
-        borderBottom: 0,
-        paddingLeft: 0,
-        lineHeight: 1.5,
-        fontSize: "1rem",
-        '& a':{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-            display: "block"
+const useStyles = makeStyles(theme => {
+    return createStyles({
+        table: {
+            marginTop: theme.spacing(1),
+            tableLayout: "fixed"
+        },
+        tableCell: {
+            borderBottom: 0,
+            paddingLeft: 0,
+            lineHeight: 1.5,
+            fontSize: "1rem",
+            '& a':{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                display: "block"
+            }
+        },
+        tableRow: {
+            height: 30
         }
-    },
-    tableRow: {
-        height: 30
-    }
+    })
 });
 
-class TableIntro extends Component {
-
-    render(){
-        const { classes } = this.props;
-        return (
-            <Table className={classes.table}>
-                <TableBody>
-                {properties.floatingIntro.tableRows.map(row => (
+const TableIntro = ({...props}) => {
+    const classes = useStyles();
+    return (
+        <Table className={classes.table}>
+            <TableBody>
+                {props.data.floatingIntro.tableRows.map(row => (
                     <TableRow key={row.id} className={classes.tableRow}>
-                        <TableCell component="th" scope="row" style={{fontWeight: 800, width: 100}} className={classes.tableCell}>
+                        <TableCell component="th" scope="row" style={{fontWeight: 900, width: 100}}
+                                   className={classes.tableCell}>
                             {row.label}
                         </TableCell>
                         <TableCell align="left" className={classes.tableCell}>
@@ -46,15 +44,9 @@ class TableIntro extends Component {
                         </TableCell>
                     </TableRow>
                 ))}
-                </TableBody>
-            </Table>
-        );
-    }
-
+            </TableBody>
+        </Table>
+    );
 }
 
-TableIntro.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(TableIntro);
+export default TableIntro;

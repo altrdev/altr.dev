@@ -1,58 +1,39 @@
-import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Fab from '@material-ui/core/Fab';
 import Up from '@material-ui/icons/KeyboardArrowUp';
+import {createStyles, makeStyles} from "@material-ui/core";
 
-const styles = theme => ({
-    fabButton: {
-        position: 'absolute',
-        zIndex: 1,
-        top: -30,
-        left: 0,
-        right: 0,
-        margin: '0 auto',
-    }
+const useStyles = makeStyles(theme => {
+    return createStyles({
+        fabButton: {
+            position: 'absolute',
+            zIndex: 1,
+            top: -30,
+            left: 0,
+            right: 0,
+            margin: '0 auto',
+        }
+    })
 });
 
-class ScrollButton extends Component {
-    constructor() {
-        super();
-    
-        this.state = {
-            intervalId: 0
-        };
-      }
-      
-      scrollStep() {
-        if (window.pageYOffset === 0) {
-            clearInterval(this.state.intervalId);
-        }
-        window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
-      }
-      
-      scrollToTop() {
-        let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
-        this.setState({ intervalId: intervalId });
-      }
+const ScrollButton = ({...props}) => {
 
-    render() {
-        const { classes } = this.props;
+    const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (c > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, c - c / props.delayInMs);
+        }
+    };
+
+    const classes  = useStyles(props);
         
-        return (
-            <React.Fragment>
-                <CssBaseline />
-                <Fab color="primary" onClick={()=>this.scrollToTop()} aria-label="Go to top" className={classes.fabButton}>
-                    <Up />
-                </Fab>
-            </React.Fragment>
-        );
-    } 
+    return (
+        <Fab color="primary" onClick={()=>scrollToTop()} aria-label="Go to top" className={classes.fabButton}>
+            <Up />
+        </Fab>
+    );
+
 }
 
-ScrollButton.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-  
-export default withStyles(styles) (ScrollButton);
+export default ScrollButton;

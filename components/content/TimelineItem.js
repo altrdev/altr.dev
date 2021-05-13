@@ -1,84 +1,73 @@
-import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
+import {createStyles, makeStyles} from "@material-ui/core";
 
-const styles = theme => ({
-
-    event: {
-        borderBottom: "1px solid rgba(160, 160, 160, 0.2)",
-        paddingBottom: 15,
-        marginBottom: 20,
-        position: "relative",
-        '&:before': {
-            position: "absolute",
-            display: "block",
-            top: 0
+const useStyles = makeStyles(theme => {
+    return createStyles({
+        event: {
+            borderBottom: "1px solid rgba(160, 160, 160, 0.2)",
+            paddingBottom: 15,
+            marginBottom: 20,
+            position: "relative",
+            '&:before': {
+                position: "absolute",
+                display: "block",
+                top: 0
+            },
+            '&:after': {
+                boxShadow: `0 0 0 8px ${theme.palette.primary.main}`,
+                left: -30,
+                background: "#fff",
+                borderRadius: "50%",
+                height: 11,
+                width: 11,
+                content: "close-quote",
+                top: 5,
+                position: "absolute",
+                display: "block"
+            },
+            '&:last-of-type': {
+                paddingBottom: 0,
+                marginBottom: 0,
+                border: "none"
+            }
         },
-        '&:after': {
-            boxShadow: `0 0 0 8px ${theme.palette.primary.main}`,
-            left: -30,
-            background: "#fff",
-            borderRadius: "50%",
-            height: 11,
-            width: 11,
-            content: "close-quote",
-            top: 5,
-            position: "absolute",
-            display: "block"
+        company: {
+            fontWeight: 600,
+            color: theme.palette.text.secondary
         },
-        '&:last-of-type': {
-            paddingBottom: 0,
-            marginBottom: 0,
-            border: "none"
+        title: {
+            fontWeight: 600,
+            marginBottom: theme.spacing(1)
+        },
+        date: {
+            fontWeight: 400,
+            color: theme.palette.text.secondary,
+            float: 'right',
+            textAlign: 'right'
         }
-    },
-    company: {
-        fontWeight: 600,
-        color: theme.palette.text.secondary
-    },
-    title: {
-        fontWeight: 600,
-        marginBottom: theme.spacing(1)
-    },
-    date: {
-        fontWeight: 400,
-        color: theme.palette.text.secondary,
-        float: 'right',
-        textAlign: 'right'
-    },
+    })
 });
 
-class TimelineItem extends Component {
-    render() {
-        const { classes, title, company, description, date } = this.props;
-        return (
-            <React.Fragment>
-                <CssBaseline />
-                <li className={classes.event}>
-                    <Typography variant="subtitle1" className={classes.company}>{company}</Typography>
-                    <Typography variant="h5" className={classes.title}>
-                        {title}
-                        <Typography variant="subtitle1" component="span" className={classes.date}>{date}</Typography>
-                    </Typography>
-                    <Typography variant="body1" style={{whiteSpace: "pre-wrap"}}>{description}</Typography>
-                </li>
-            </React.Fragment>
-        );
-    }
+const TimelineItem = ({...props}) => {
+
+    const classes = useStyles();
+
+    return (
+
+        <li className={classes.event}>
+            <Typography variant="subtitle1" className={classes.company}>{props.company}</Typography>
+            <Typography variant="h5" className={classes.title}>
+                {props.title}
+                <Typography variant="subtitle1" component="span" className={classes.date}>{props.date}</Typography>
+            </Typography>
+            <Typography variant="body1" style={{whiteSpace: "pre-wrap"}}>{props.description}</Typography>
+        </li>
+
+    );
+
 }
 
-
-
-TimelineItem.propTypes = {
-    classes: PropTypes.object.isRequired,
-    company: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired
-};
-
-export default withStyles(styles) (TimelineItem);
+export default TimelineItem;
 
 
 
