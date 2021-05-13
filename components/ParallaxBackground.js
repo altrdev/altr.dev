@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Background from '../public/images/background_image.jpg';
+import {createStyles, makeStyles} from "@material-ui/core";
 
-const styles = theme => ({
-    parallax: {
-        /* The image used */
-        backgroundImage: `url(${Background})`,
-        minHeight: 400,
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        opacity: 0.7,
-        filter: 'alpha(opacity=50)'
-    }
+const useStyles = makeStyles(theme => {
+    return createStyles({
+        parallax: {
+            /* The image used */
+            backgroundImage: `url(${Background})`,
+            minHeight: 400,
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            opacity: 0.7,
+            filter: 'alpha(opacity=50)'
+        }
+    })
 });
 
-class ParallaxBackground extends Component {
-    render() {
-        const { classes } = this.props;
-        return (
-            <React.Fragment>
-                <CssBaseline/>
-                <div className={classes.parallax}></div>
-            </React.Fragment>
-        );
-    } 
+const ParallaxBackground = () => {
+    const classes = useStyles();
+    return (
+        <div>
+            <div className={classes.parallax}></div>
+        </div>
+    );
+
 }
 
-ParallaxBackground.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
-  
-export default withStyles(styles) (ParallaxBackground);
+export default ParallaxBackground;
