@@ -11,7 +11,7 @@ export default class Layout extends React.Component {
     render() {
         const { children, title = 'altr.dev - Alessandro Travi Software Developer' } = this.props;
         return (
-            <div>
+            <>
                 <Head>
                     <meta
                         name="viewport"
@@ -38,8 +38,7 @@ export default class Layout extends React.Component {
                     { children }
                     <Footer data={properties}/>
                 </ThemeProvider>
-
-            </div>
+            </>
         );
     }
 }
