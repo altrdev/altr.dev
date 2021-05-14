@@ -94,23 +94,23 @@ const FloatingIntro = ({...props}) =>  {
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                   <Paper className={classes.paper}>
-                    <Avatar alt="Alessandro Travi" src={AvatarImage} className={classes.bigAvatar} />
+                    <Avatar alt={props.floatingIntro.name} src={AvatarImage} className={classes.bigAvatar} />
                     <Typography component="h1" variant="h4" align="center" color="primary" className={classes.name}>
-                      {props.data.floatingIntro.name}
+                      {props.floatingIntro.name}
                     </Typography>
                     <Typography variant="subtitle1" align="center" color="textSecondary" className={classes.work}>
-                      {props.data.floatingIntro.workTitle}
+                      {props.floatingIntro.workTitle}
                     </Typography>
                   </Paper>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <Paper className={classes.paper}>
                     <Typography variant="h6" align="left" color="textSecondary" className={classes.title}>
-                      {props.data.titles.aboutMe}
+                      {props.titles.aboutMe}
                     </Typography>
                     <CustomDivider/>
                     <Typography variant="body1" align="left" className={classes.description}>
-                      {props.data.floatingIntro.description}
+                      {props.floatingIntro.description}
                     </Typography>
                     <TableIntro {...props}/>
                   </Paper>
@@ -120,7 +120,7 @@ const FloatingIntro = ({...props}) =>  {
             <AppBar className={classes.appBar}>
               <Toolbar className={classes.toolbar}>
                 <div style={{margin: 'auto'}}>
-                  {props.data.floatingIntro.icons.map(icon => (
+                  {props.floatingIntro.icons.map(icon => (
                       <Link key={icon.id} href={icon.value} target="_blank" rel="noopener" color="inherit" className={classes.link}>
                         <Icon path={icon.label} size={1.2} className={classes.icon}/>
                       </Link>

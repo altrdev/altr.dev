@@ -78,10 +78,10 @@ const useStyles = makeStyles(theme => {
     })
 });
 
-const ContentResume = ({data}) => {
+const ContentResume = ({...props}) => {
 
     const downloadCV = () => {
-        window.open(data.content.cv_link, "_blank");
+        window.open(props.content.cv_link, "_blank");
     }
 
     const classes = useStyles();
@@ -89,14 +89,14 @@ const ContentResume = ({data}) => {
         <div className={classes.layout}>
             <Fab variant="extended" aria-label="Download" color="primary" onClick={()=>downloadCV()}>
                 <DownloadIcon className={classes.extendedIcon} />
-                {data.content.labels.download}
+                {props.content.labels.download}
             </Fab>
-            <Title value={data.titles.skills} />
+            <Title value={props.titles.skills} />
             <Paper className={classes.mainPaper}>
                 <Grid container spacing={1}>
                     <Grid item xs={12} sm={6}>
                         <Paper className={classes.paper}>
-                            {data.content.skillsLanguage.map(skill => (
+                            {props.content.skillsLanguage.map(skill => (
                                 <div key={skill.id} className={classes.progressWrapper}>
                                     <Typography variant="body1" align="left" className={classes.descriptionLabel}>
                                         {skill.label}
@@ -109,7 +109,7 @@ const ContentResume = ({data}) => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Paper className={classes.paper}>
-                            {data.content.skillsTool.map(skill => (
+                            {props.content.skillsTool.map(skill => (
                                 <div key={skill.id} className={classes.progressWrapper}>
                                     <Typography variant="body1" align="left" className={classes.descriptionLabel}>
                                         {skill.label}
@@ -122,21 +122,21 @@ const ContentResume = ({data}) => {
                     </Grid>
                 </Grid>
             </Paper>
-            <Title value={data.titles.experience} />
+            <Title value={props.titles.experience} />
             <Timeline>
-                {data.content.workExperience.map((experience, i) => {
+                {props.content.workExperience.map((experience, i) => {
                     return <TimelineItem key={i} date={experience.date} title={experience.title} description={experience.description} company={experience.company} />
                 })}
             </Timeline>
-            <Title value={data.titles.education} />
+            <Title value={props.titles.education} />
             <Timeline>
-                {data.content.educations.map((education, i) => {
+                {props.content.educations.map((education, i) => {
                     return <TimelineItem key={i} date={education.date} title={education.title} company={education.company} />
                 })}
             </Timeline>
-            <Title value={data.titles.projects} />
+            <Title value={props.titles.projects} />
             <Grid container spacing={3}>
-                {data.content.personalProjects.map((project, i) => {
+                {props.content.personalProjects.map((project, i) => {
                     return <Grid key={i} item xs={12} sm={4}>
                         <Paper className={`${classes.mainPaper} ${classes.borderTop}`} style={{height: "100%"}}>
                             <Typography variant="h6" align="left" className={classes.projectTitle}>

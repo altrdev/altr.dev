@@ -32,9 +32,9 @@ const Footer = ({...props}) => {
     return (
         <AppBar position="relative" color="primary" className={classes.appBarFooter}>
             <Toolbar className={classes.toolbarFooter}>
-                <ScrollButton delayInMs="16.66"/>
+                <ScrollButton delayInMs="12"/>
                 <Typography variant="subtitle1" align="center" className={classes.infoFooter}>
-                    {props.data.footer.text}
+                    {(new Date().getFullYear()) + props.footer}
                 </Typography>
             </Toolbar>
         </AppBar>
