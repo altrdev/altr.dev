@@ -3,6 +3,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import {createStyles, makeStyles} from "@material-ui/core";
+import Obfuscate from "react-obfuscate";
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -33,14 +34,14 @@ const TableIntro = ({...props}) => {
     return (
         <Table className={classes.table}>
             <TableBody>
-                {props.data.floatingIntro.tableRows.map(row => (
+                {props.floatingIntro.tableRows.map(row => (
                     <TableRow key={row.id} className={classes.tableRow}>
                         <TableCell component="th" scope="row" style={{fontWeight: 900, width: 100}}
                                    className={classes.tableCell}>
                             {row.label}
                         </TableCell>
                         <TableCell align="left" className={classes.tableCell}>
-                            {row.value}
+                            { row.label === "Email" ? <Obfuscate email={row.value}/> : row.value }
                         </TableCell>
                     </TableRow>
                 ))}
