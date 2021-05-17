@@ -11,10 +11,14 @@ const Layout = ({children, title = info.title, footer = info.footer}) => {
     return (
         <>
             <Head>
-                <meta
-                    name="viewport"
-                    content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
-                <meta name="theme-color" content="#000000" />
+                <meta charSet='utf-8'/>
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+
+                <link rel="manifest" href="/manifest.json" />
+                <link href='/favicon.ico' rel='icon' />
+                <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+                <meta name="theme-color" content="#1BA96A"/>
+
                 <meta name="author" content="Alessandro Travi" />
                 <meta name="description" content="Official site about Alessandro Travi aka altrdev. I’m a software engineer always willing to put myself out there and push myself beyond my limits." />
                 <meta name="robots" content="index, follow" />
@@ -26,7 +30,6 @@ const Layout = ({children, title = info.title, footer = info.footer}) => {
             ga('create', 'UA-135914500-1', 'auto');
             ga('send', 'pageview');` }} />
 
-                <link rel="manifest" href="./manifest.json" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
                 <script id="CookieDeclaration" src="https://consent.cookiebot.com/800b48d7-e6d0-4aac-b9ac-94d622bdac24/cd.js" type="text/javascript" async />
