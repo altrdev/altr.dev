@@ -16,7 +16,9 @@ const Layout = ({children, title = info.title, footer = info.footer}) => {
 
                 <link rel="manifest" href="/manifest.json" />
                 <link href='/favicon.ico' rel='icon' />
-                <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+                <link rel='apple-touch-icon' sizes='152x152' href='/images/icons/touch-icon-ipad.png' />
+                <link rel='apple-touch-icon' sizes='180x180' href='/images/icons/touch-icon-iphone-retina.png' />
+                <link rel='apple-touch-icon' sizes='167x167' href='/images/icons/touch-icon-ipad-retina.png' />
                 <meta name="theme-color" content="#1BA96A"/>
 
                 <meta name="author" content="Alessandro Travi" />
