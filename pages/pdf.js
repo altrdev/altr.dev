@@ -7,7 +7,8 @@ import RBox from "../components/resume/RBox";
 import Obfuscate from "react-obfuscate";
 import RWork from "../components/resume/RWork";
 import RSkills from "../components/resume/RSkills";
-import {useRouter} from "next/router";
+import { useRouter } from 'next/router'
+import * as queryString from "query-string";
 
 export async function getStaticProps(context) {
 
@@ -92,9 +93,8 @@ const Pdf = ({...props}) => {
     const classes = useStyles();
 
     const router = useRouter()
+    router.query = queryString.parse(router.asPath.split(/\?/)[1]);
     const {obfuscate} = router.query
-
-    console.log(obfuscate)
 
     return (
         <Grid container spacing={2}>
@@ -125,9 +125,9 @@ const Pdf = ({...props}) => {
                                         <Grid item xs={8}>
                                             {
                                                 row.label === "Email"
-                                                ? <Obfuscate email={row.value} obfuscate={obfuscate || true}/>
+                                                ? <Obfuscate email={row.value} obfuscate={unwrapTextBoolean(obfuscate)}/>
                                                 : row.label === "Website"
-                                                ? <Obfuscate href={row.value} obfuscate={obfuscate || true}/>
+                                                ? <Obfuscate href={row.value} obfuscate={unwrapTextBoolean(obfuscate)}/>
                                                 : row.value
                                             }
                                         </Grid>
@@ -158,6 +158,13 @@ const Pdf = ({...props}) => {
             </Grid>
         </Grid>
     );
+}
+
+function unwrapTextBoolean(tB){
+    console.log(tB)
+    if(tB === 'true') return true;
+    if(tB === 'false') return false;
+    return null;
 }
 
 export default Pdf;
