@@ -39,8 +39,7 @@ export const floatingIntro = {
 }
 
 export const content = {
-    cv_link: "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_cOe8WyJvwj0Jn-cmHZYplzdJk8izdDVI9O38L8fgIY/export?format=pdf",
-        labels: {
+    labels: {
         download: "Download resume"
     },
     skillsLanguage: [
