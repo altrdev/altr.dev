@@ -161,7 +161,6 @@ const Pdf = ({...props}) => {
 }
 
 function unwrapTextBoolean(tB){
-    console.log(tB)
     if(tB === 'true') return true;
     if(tB === 'false') return false;
     return null;
