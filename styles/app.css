@@ -1,0 +1,11 @@
+body {
+  background-color: white !important;
+}
+
+/* PRINT STYLES */
+
+@media print {
+  body, html {
+    font-size: 82%;
+  }
+}

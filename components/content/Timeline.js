@@ -35,35 +35,3 @@ const Timeline = ({...props}) => {
 }
 
 export default Timeline;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-<div class="row">
-        <div class="col s12 m12 l12">
-          <ul class="timeline">
-            <li class="event">
-              <h3>Management and Entreprenurship (MSc)</h3>
-              <p>
-                This September 2015 I will begin an MSc in Management and Entrepreneurship at University of Sussex, to broaden my knowledge and gain skills necessary for my future in business and management.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-
- */

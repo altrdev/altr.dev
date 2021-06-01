@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import '../styles/animate.css'
 import '../styles/timeline.css'
+import '../styles/app.css'
 import {useEffect} from "react";
 
 export default function MyApp(props) {

@@ -12,8 +12,9 @@ export const info = {
 }
 
 export const titles = {
-    aboutMe: "About me",
-    experience: "Experience",
+    aboutMe: "About Me",
+    contacts: "Contacts",
+    experience: "Professional Experience",
     education: "Education",
     skills: "Skills",
     projects: "Side Projects"
@@ -31,7 +32,7 @@ export const floatingIntro = {
     ],
     tableRows: [
         createData("BirthDate", "09/04/1990"),
-        createData("Country", "Como Lake, Italy"),
+        createData("Location", "Como Lake, Italy"),
         createData("Email", "info@altr.dev"),
         createData("Website", "https://altr.dev")
     ]
@@ -54,6 +55,11 @@ export const content = {
         createData("MongoDB", 87),
         createData("Solidity", 75)
     ],
+    skills: {
+        proficient: "Node.js, Java, Kotlin, Springboot, Next.js, Serverless, AWS, Terraform, Cloudformation, MongoDB, DynamoDB",
+        comfortable: "React.js, Python, Azure, CDK, Go",
+        familiar: "Vue.js, Angular"
+    },
     workExperience:[
         {
             date: "2019 – 2021",
