@@ -9,7 +9,7 @@ import Title from './ContentTitle';
 import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
 import LinkIcon from '@material-ui/icons/Link';
-import {createStyles, makeStyles} from "@material-ui/core";
+import {createStyles, Link, makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -80,17 +80,15 @@ const useStyles = makeStyles(theme => {
 
 const ContentResume = ({...props}) => {
 
-    const downloadCV = () => {
-        window.open(props.content.cv_link, "_blank");
-    }
-
     const classes = useStyles();
     return (
         <div className={classes.layout}>
-            <Fab variant="extended" aria-label="Download" color="primary" onClick={()=>downloadCV()}>
-                <DownloadIcon className={classes.extendedIcon} />
-                {props.content.labels.download}
-            </Fab>
+            <Link href="/api/pdf" target={"blank"}>
+                <Fab variant="extended" aria-label="Download" color="primary">
+                    <DownloadIcon className={classes.extendedIcon} />
+                    {props.content.labels.download}
+                </Fab>
+            </Link>
             <Title value={props.titles.skills} />
             <Paper className={classes.mainPaper}>
                 <Grid container spacing={1}>
