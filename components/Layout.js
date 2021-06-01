@@ -3,10 +3,9 @@ import React from "react";
 import theme from "../utils/theme";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider} from "@material-ui/core/styles";
-import Footer from "./Footer";
 import {info} from "../data";
 
-const Layout = ({children, title = info.title, footer = info.footer}) => {
+const Layout = ({children, title = info.title}) => {
 
     return (
         <>
@@ -40,7 +39,6 @@ const Layout = ({children, title = info.title, footer = info.footer}) => {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 { children }
-                <Footer footer={footer}/>
             </ThemeProvider>
         </>
     );

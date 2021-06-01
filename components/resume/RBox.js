@@ -1,0 +1,39 @@
+import {createStyles, Grid, makeStyles, Typography} from "@material-ui/core";
+import Icon from "@mdi/react";
+
+const useStyles = makeStyles(theme => {
+    return createStyles({
+        title: {
+            fontWeight: 600,
+        },
+        boxDesc: {
+            padding: 5
+        },
+    })
+});
+
+const RBox = ({icon,text,children}) => {
+
+    const classes = useStyles();
+    return (
+        <div>
+            <Grid container alignItems="flex-end" spacing={2}>
+                <Grid item>
+                    <Icon path={icon} color="secondary" size={1.2} />
+                </Grid>
+                <Grid item>
+                    <Typography variant="h4" className={classes.title}>
+                        {text}
+                    </Typography>
+                </Grid>
+            </Grid>
+            <Typography variant="body1" align="left" className={classes.boxDesc}>
+                {children}
+            </Typography>
+        </div>
+
+    );
+
+}
+
+export default RBox;

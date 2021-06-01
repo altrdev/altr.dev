@@ -1,8 +1,10 @@
 import ParallaxBackground from "../components/ParallaxBackground";
 import FloatingIntro from "../components/FloatingIntro";
 import ContentResume from "../components/content/ContentResume";
-import {titles, content, floatingIntro} from "../data";
+import {titles, content, floatingIntro, info} from "../data";
 import moment from "moment";
+import Footer from "../components/Footer";
+import React from "react";
 
 export async function getStaticProps(context) {
 
@@ -18,7 +20,8 @@ export async function getStaticProps(context) {
         props: {
             titles: titles,
             content: content,
-            floatingIntro: floatingIntro
+            floatingIntro: floatingIntro,
+            footer: info.footer
         },
     }
 }
@@ -29,6 +32,7 @@ const Home = ({...props}) => {
             <ParallaxBackground/>
             <FloatingIntro titles={props.titles} floatingIntro={props.floatingIntro}/>
             <ContentResume titles={props.titles} content={content}/>
+            <Footer footer={props.footer}/>
         </div>
     );
 }
