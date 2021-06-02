@@ -83,7 +83,7 @@ const ContentResume = ({...props}) => {
     const classes = useStyles();
     return (
         <div className={classes.layout}>
-            <Link href="/api/pdf" target={"blank"}>
+            <Link href="/api/pdf" target={"_blank"}>
                 <Fab variant="extended" aria-label="Download" color="primary">
                     <DownloadIcon className={classes.extendedIcon} />
                     {props.content.labels.download}
