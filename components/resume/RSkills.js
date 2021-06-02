@@ -19,8 +19,8 @@ const RSkills = ({textProficient,textComfortable,textFamiliar}) => {
 
     const classes = useStyles();
     return (
-        <Grid container>
-            <Grid item xs={12} xm={4} className={classes.grid}>
+        <Grid container spacing={2}>
+            <Grid item xs={12} sm={12} md={6} lg={4} className={classes.grid}>
                 <Typography variant="h6">
                     <span className={classes.stars}>
                         <Icon path={mdiStar} size="1.5rem"/>
@@ -33,7 +33,7 @@ const RSkills = ({textProficient,textComfortable,textFamiliar}) => {
                     {textProficient}
                 </div>
             </Grid>
-            <Grid item xs={12} xm={4} className={classes.grid}>
+            <Grid item xs={12} sm={12} md={6} lg={4} className={classes.grid}>
                 <Typography variant="h6">
                     <span className={classes.stars}>
                         <Icon path={mdiStar} size="1.5rem" style={{opacity: ".75"}}/>
@@ -45,7 +45,7 @@ const RSkills = ({textProficient,textComfortable,textFamiliar}) => {
                     {textComfortable}
                 </div>
             </Grid>
-            <Grid item xs={12} xm={4} className={classes.grid}>
+            <Grid item xs={12} sm={12} md={6} lg={4} className={classes.grid}>
                 <Typography variant="h6">
                     <span className={classes.stars}>
                         <Icon path={mdiStar} size="1.5rem" style={{opacity: ".5"}}/>

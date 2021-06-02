@@ -139,9 +139,9 @@ const Pdf = ({...props}) => {
                     </Paper>
                     <Paper className={classes.paper}>
                         <RBox icon={mdiStar} text={props.titles.skills}>
-                            <RSkills textProficient={content.skills.proficient}
-                                     textComfortable={content.skills.comfortable}
-                                     textFamiliar={content.skills.familiar}
+                            <RSkills textProficient={props.content.skills.proficient}
+                                     textComfortable={props.content.skills.comfortable}
+                                     textFamiliar={props.content.skills.familiar}
                             />
                         </RBox>
                     </Paper>
