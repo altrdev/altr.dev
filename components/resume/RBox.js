@@ -9,6 +9,9 @@ const useStyles = makeStyles(theme => {
         boxDesc: {
             padding: 5
         },
+        spacer: {
+            paddingBottom: 50
+        }
     })
 });
 
@@ -16,7 +19,7 @@ const RBox = ({icon,text,children}) => {
 
     const classes = useStyles();
     return (
-        <div>
+        <div className={classes.spacer}>
             <Grid container alignItems="flex-end" spacing={2}>
                 <Grid item>
                     <Icon path={icon} color="secondary" size={1.2} />

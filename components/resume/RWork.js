@@ -7,7 +7,7 @@ import {mdiCalendar} from '@mdi/js'
 const useStyles = makeStyles(theme => {
     return createStyles({
         container: {
-            paddingTop: 20
+            paddingTop: 20,
         },
         title: {
             fontWeight: 600,
