@@ -27,8 +27,8 @@ async function handler(req, res) {
     });
 
     await browser.close();
-
     res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `filename="AT_Resume.pdf"`);
     res.end(pdf);
 }
 
