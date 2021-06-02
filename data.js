@@ -43,9 +43,9 @@ export const content = {
         download: "Download resume"
     },
     skills: {
-        proficient: "Node.js, Java, Kotlin, Springboot, Next.js, Serverless, AWS, Terraform, Cloudformation, MongoDB, DynamoDB, Docker",
+        proficient: "Node.js, Java, Kotlin, Springboot, Next.js, Serverless, AWS, Terraform, CloudFormation, MongoDB, DynamoDB, Docker",
         comfortable: "React.js, Python, Azure, CDK, Solidity, Flutter",
-        familiar: "Vue.js, Angular, Go"
+        familiar: "Vue.js, Angular, Go, Swift"
     },
     workExperience:[
         {
