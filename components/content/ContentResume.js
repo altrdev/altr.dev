@@ -1,15 +1,10 @@
-import Fab from '@material-ui/core/Fab';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import DownloadIcon from '@material-ui/icons/CloudDownload';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import Title from './ContentTitle';
 import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
-import LinkIcon from '@material-ui/icons/Link';
-import {createStyles, Link, makeStyles} from "@material-ui/core";
 import RSkills from "../resume/RSkills";
+import DownloadIcon from '@material-ui/icons/CloudDownload';
+import LinkIcon from '@material-ui/icons/Link';
+import {createStyles, makeStyles, Paper, Grid, Link, Fab, IconButton, Typography} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => {
     return createStyles({

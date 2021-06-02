@@ -1,5 +1,4 @@
-import Typography from '@material-ui/core/Typography';
-import {createStyles, Grid, makeStyles} from "@material-ui/core";
+import {createStyles, Grid, makeStyles, Typography} from "@material-ui/core";
 import Icon from "@mdi/react";
 import {mdiCalendar} from '@mdi/js'
 

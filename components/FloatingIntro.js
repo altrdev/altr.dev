@@ -1,15 +1,8 @@
-import Paper from '@material-ui/core/Paper';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Avatar from '@material-ui/core/Avatar';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
 import CustomDivider from './CustomDivider';
 import TableIntro from './TableIntro';
 import Icon from '@mdi/react'
 import AvatarImage from '../public/images/Profile_square.jpg';
-import Typography from '@material-ui/core/Typography';
-import {createStyles, makeStyles} from "@material-ui/core";
+import {createStyles, makeStyles, Toolbar, Avatar, Grid, Link, AppBar, Paper, Typography} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => {
     return createStyles({

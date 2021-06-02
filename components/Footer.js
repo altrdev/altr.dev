@@ -1,8 +1,5 @@
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import ScrollButton from './ScrollButton';
-import Typography from '@material-ui/core/Typography';
-import {createStyles, makeStyles} from "@material-ui/core";
+import {createStyles, makeStyles, AppBar, Toolbar, Typography} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => {
     return createStyles({

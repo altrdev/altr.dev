@@ -1,9 +1,9 @@
 import ParallaxBackground from "../components/ParallaxBackground";
 import FloatingIntro from "../components/FloatingIntro";
+import Footer from "../components/Footer";
 import ContentResume from "../components/content/ContentResume";
 import {titles, content, floatingIntro, info} from "../data";
 import moment from "moment";
-import Footer from "../components/Footer";
 import React from "react";
 
 export async function getStaticProps(context) {

@@ -1,15 +1,14 @@
 import {titles, content, floatingIntro} from "../data";
 import moment from "moment";
-import {Box, createStyles, Grid, makeStyles, Paper} from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
+import {Box, createStyles, Grid, makeStyles, Paper, Typography} from "@material-ui/core";
 import {mdiAccount, mdiContacts, mdiStar, mdiBriefcase, mdiSchool} from '@mdi/js'
-import RBox from "../components/resume/RBox";
 import Obfuscate from "react-obfuscate";
+import RBox from "../components/resume/RBox";
 import RWork from "../components/resume/RWork";
-import RSkills from "../components/resume/RSkills";
-import { useRouter } from 'next/router'
-import * as queryString from "query-string";
 import REdu from "../components/resume/REdu";
+import RSkills from "../components/resume/RSkills";
+import {useRouter} from 'next/router'
+import * as queryString from "query-string";
 
 export async function getStaticProps(context) {
 
