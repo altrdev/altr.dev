@@ -4,12 +4,12 @@ import Typography from '@material-ui/core/Typography';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import Title from './ContentTitle';
 import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
 import LinkIcon from '@material-ui/icons/Link';
 import {createStyles, Link, makeStyles} from "@material-ui/core";
+import RSkills from "../resume/RSkills";
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -91,34 +91,11 @@ const ContentResume = ({...props}) => {
             </Link>
             <Title value={props.titles.skills} />
             <Paper className={classes.mainPaper}>
-                <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6}>
-                        <Paper className={classes.paper}>
-                            {props.content.skillsLanguage.map(skill => (
-                                <div key={skill.id} className={classes.progressWrapper}>
-                                    <Typography variant="body1" align="left" className={classes.descriptionLabel}>
-                                        {skill.label}
-                                        <span className={classes.spanPercentage}>{skill.value}%</span>
-                                    </Typography>
-                                    <LinearProgress variant="determinate" value={skill.value} className={classes.progress}/>
-                                </div>
-                            ))}
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <Paper className={classes.paper}>
-                            {props.content.skillsTool.map(skill => (
-                                <div key={skill.id} className={classes.progressWrapper}>
-                                    <Typography variant="body1" align="left" className={classes.descriptionLabel}>
-                                        {skill.label}
-                                        <span className={classes.spanPercentage}>{skill.value}%</span>
-                                    </Typography>
-                                    <LinearProgress variant="determinate" value={skill.value} className={classes.progress}/>
-                                </div>
-                            ))}
-                        </Paper>
-                    </Grid>
-                </Grid>
+                <RSkills
+                    textProficient={props.content.skills.proficient}
+                    textComfortable={props.content.skills.comfortable}
+                    textFamiliar={props.content.skills.familiar}
+                />
             </Paper>
             <Title value={props.titles.experience} />
             <Timeline>
