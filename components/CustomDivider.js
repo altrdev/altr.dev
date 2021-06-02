@@ -1,5 +1,4 @@
-import Divider from '@material-ui/core/Divider';
-import {createStyles, makeStyles} from "@material-ui/core";
+import {createStyles, makeStyles, Divider} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => {
     return createStyles({

@@ -1,5 +1,4 @@
-import Typography from '@material-ui/core/Typography';
-import {createStyles, makeStyles} from "@material-ui/core";
+import {createStyles, makeStyles, Typography} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => {
     return createStyles({

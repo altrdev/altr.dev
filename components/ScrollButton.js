@@ -1,6 +1,5 @@
-import Fab from '@material-ui/core/Fab';
 import Up from '@material-ui/icons/KeyboardArrowUp';
-import {createStyles, makeStyles} from "@material-ui/core";
+import {createStyles, makeStyles, Fab} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => {
     return createStyles({
