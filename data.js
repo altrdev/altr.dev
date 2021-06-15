@@ -49,6 +49,12 @@ export const content = {
     },
     workExperience:[
         {
+            date: "2021 – Present",
+            title: "Full-Stack Developer",
+            company: "Freelance",
+            description: "Freelance consulting"
+        },
+        {
             date: "2019 – 2021",
             title: "DevOPS Engineer",
             company: "Claranet CH",
