@@ -87,7 +87,7 @@ const FloatingIntro = ({...props}) =>  {
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                   <Paper className={classes.paper}>
-                    <Avatar alt={props.floatingIntro.name} src={AvatarImage} className={classes.bigAvatar} />
+                    <Avatar alt={props.floatingIntro.name} src={AvatarImage.src} className={classes.bigAvatar} />
                     <Typography component="h1" variant="h4" align="center" color="primary" className={classes.name}>
                       {props.floatingIntro.name}
                     </Typography>

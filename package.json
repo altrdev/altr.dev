@@ -16,8 +16,7 @@
     "chrome-aws-lambda": "^10.0.0",
     "moment": "^2.29.1",
     "next": "12.1.0",
-    "next-images": "^1.8.1",
-    "next-pwa": "^5.2.21",
+    "next-pwa": "^5.4.5",
     "prop-types": "^15.7.2",
     "puppeteer-core": "^10.0.0",
     "query-string": "^7.0.0",
@@ -26,6 +25,8 @@
     "react-obfuscate": "^3.6.8"
   },
   "devDependencies": {
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0",
     "puppeteer": "^10.0.0"
   }
 }
