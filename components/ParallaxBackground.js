@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme => {
     return createStyles({
         parallax: {
             /* The image used */
-            backgroundImage: `url(${Background})`,
+            backgroundImage: `url(${Background.src})`,
             minHeight: 400,
             backgroundAttachment: 'fixed',
             backgroundPosition: 'center',
