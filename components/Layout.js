@@ -10,6 +10,16 @@ const Layout = ({children, title = info.title}) => {
 
     return (
         <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`} strategy='afterInteractive' />
+            <Script id="google-analytics" strategy='afterInteractive'>
+                {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}');
+                `}
+            </Script>
             <Head>
                 <meta charSet='utf-8'/>
                 <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
@@ -26,17 +36,6 @@ const Layout = ({children, title = info.title}) => {
                 <meta name="robots" content="index, follow" />
                 <meta name="yandex-verification" content="c5acf8bbe12bc1d5" />
                 <meta name="msvalidate.01" content="D5D6C71B573ADD7743E2BFEF1E56E6D9" />
-
-                <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`} strategy='afterInteractive' />
-                <Script id="google-analytics" strategy='afterInteractive'>
-                    {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-                    gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}');
-                    `}
-                </Script>
                 
                 <title>{ title }</title>
             </Head>
