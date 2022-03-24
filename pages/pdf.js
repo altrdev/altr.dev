@@ -1,6 +1,8 @@
 import {titles, content, floatingIntro} from "../data";
 import moment from "moment";
-import {Box, createStyles, Grid, makeStyles, Paper, Typography} from "@material-ui/core";
+import { Box, Grid, Paper, Typography } from "@mui/material";
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import {mdiAccount, mdiContacts, mdiStar, mdiBriefcase, mdiSchool} from '@mdi/js'
 import Obfuscate from "react-obfuscate";
 import RBox from "../components/resume/RBox";
