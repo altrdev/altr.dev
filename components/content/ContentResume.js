@@ -2,9 +2,12 @@ import Title from './ContentTitle';
 import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
 import RSkills from "../resume/RSkills";
-import DownloadIcon from '@material-ui/icons/CloudDownload';
-import LinkIcon from '@material-ui/icons/Link';
-import {createStyles, makeStyles, Paper, Grid, Link, Fab, IconButton, Typography} from "@material-ui/core";
+import DownloadIcon from '@mui/icons-material/CloudDownload';
+import LinkIcon from '@mui/icons-material/Link';
+import { Paper, Grid, Link, Fab, IconButton, Typography } from "@mui/material";
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -17,8 +20,8 @@ const useStyles = makeStyles(theme => {
             fontSize: '1rem',
             textAlign: "center",
             paddingTop:20,
-            [theme.breakpoints.up(1200 + theme.spacing(4))]: {
-                width: 1200,
+            [theme.breakpoints.up('lg')]: {
+                width: theme.breakpoints.values['lg'] - Number(theme.spacing(3).slice(0, -2)),
                 marginLeft: 'auto',
                 marginRight: 'auto',
             }
@@ -107,19 +110,27 @@ const ContentResume = ({...props}) => {
             <Title value={props.titles.projects} />
             <Grid container spacing={3}>
                 {props.content.personalProjects.map((project, i) => {
-                    return <Grid key={i} item xs={12} sm={4}>
-                        <Paper className={`${classes.mainPaper} ${classes.borderTop}`} style={{height: "100%"}}>
-                            <Typography variant="h6" align="left" className={classes.projectTitle}>
-                                {project.title}
-                                {project.link ?
-                                    <IconButton aria-label="Link" color="primary" href={project.link} target="_blank" className={classes.marginIcon}>
-                                        <LinkIcon fontSize="small" />
-                                    </IconButton>
-                                : null}
-                            </Typography>
-                            <Typography variant="body1" align="left" style={{whiteSpace: "pre-wrap"}}>{project.description}</Typography>
-                        </Paper>
-                    </Grid>
+                    return (
+                        <Grid key={i} item xs={12} sm={4}>
+                            <Paper className={`${classes.mainPaper} ${classes.borderTop}`} style={{height: "100%"}}>
+                                <Typography variant="h6" align="left" className={classes.projectTitle}>
+                                    {project.title}
+                                    {project.link ?
+                                        <IconButton
+                                            aria-label="Link"
+                                            color="primary"
+                                            href={project.link}
+                                            target="_blank"
+                                            className={classes.marginIcon}
+                                            size="large">
+                                            <LinkIcon fontSize="small" />
+                                        </IconButton>
+                                    : null}
+                                </Typography>
+                                <Typography variant="body1" align="left" style={{whiteSpace: "pre-wrap"}}>{project.description}</Typography>
+                            </Paper>
+                        </Grid>
+                    );
                 })}
             </Grid>
         </div>

@@ -9,10 +9,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@mdi/js": "^5.9.55",
     "@mdi/react": "^1.5.0",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.2",
+    "@mui/styles": "^5.5.1",
     "chrome-aws-lambda": "^10.0.0",
     "moment": "^2.29.1",
     "next": "12.1.0",
