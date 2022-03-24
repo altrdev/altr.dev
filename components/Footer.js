@@ -1,5 +1,8 @@
 import ScrollButton from './ScrollButton';
-import {createStyles, makeStyles, AppBar, Toolbar, Typography} from "@material-ui/core";
+import { AppBar, Toolbar, Typography } from "@mui/material";
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -37,5 +40,5 @@ const Footer = ({...props}) => {
         </AppBar>
     );
 }
-  
+
 export default Footer;
