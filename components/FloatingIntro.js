@@ -2,7 +2,10 @@ import CustomDivider from './CustomDivider';
 import TableIntro from './TableIntro';
 import Icon from '@mdi/react'
 import AvatarImage from '../public/images/Profile_square.jpg';
-import {createStyles, makeStyles, Toolbar, Avatar, Grid, Link, AppBar, Paper, Typography} from "@material-ui/core";
+import { Toolbar, Avatar, Grid, Link, AppBar, Paper, Typography } from "@mui/material";
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -10,19 +13,19 @@ const useStyles = makeStyles(theme => {
             width: 'auto',
             marginLeft: theme.spacing(2),
             marginRight: theme.spacing(2),
-            [theme.breakpoints.up(1200 + theme.spacing(4))]: {
-                width: 1200,
+            [theme.breakpoints.up('lg')]: {
+                width: theme.breakpoints.values['lg'] - Number(theme.spacing(3).slice(0, -2)),
                 marginLeft: 'auto',
                 marginRight: 'auto',
             }
         },
         floatingPaper: {
-            marginTop: - theme.spacing(30),
+            marginTop: '-' + theme.spacing(30),
             //marginBottom: theme.spacing.unit * 3,
             padding: theme.spacing(2),
             opacity: 0.99,
             borderRadius: 0,
-            [theme.breakpoints.up(600 + theme.spacing(6))]: {
+            [theme.breakpoints.up('sm')]: {
                 //marginTop: - theme.spacing.unit * 30,
                 //marginBottom: theme.spacing.unit * 6,
                 padding: theme.spacing(3)
