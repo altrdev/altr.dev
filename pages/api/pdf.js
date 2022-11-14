@@ -1,12 +1,12 @@
-import puppeteer from 'puppeteer';
+import chrome from 'chrome-aws-lambda';
 
 async function handler(req, res) {
     const url = process.env.URL || "localhost:3000";
     const protocol = req.headers['x-forwarded-proto'] || 'http';
 
-    const browser = await puppeteer.launch({
-        //args: chrome.args,
-        //executablePath: await chrome.executablePath,
+    const browser = await chrome.puppeteer.launch({
+        args: chrome.args,
+        executablePath: await chrome.executablePath,
         headless: true,
     });
 
