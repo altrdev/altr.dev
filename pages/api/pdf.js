@@ -1,14 +1,19 @@
-import chrome from 'chrome-aws-lambda';
+import chromium from 'chrome-aws-lambda';
+import playwright from "playwright-core";
 
 async function handler(req, res) {
     const url = process.env.URL || "localhost:3000";
     const protocol = req.headers['x-forwarded-proto'] || 'http';
 
-    const browser = await chrome.puppeteer.launch({
-        args: chrome.args,
-        executablePath: await chrome.executablePath,
-        headless: true,
-    });
+    const browser = await playwright.chromium.launch({
+        args: [...chromium.args, "--font-render-hinting=none"], // This way fix rendering issues with specific fonts
+        executablePath:
+          process.env.URL
+            ? await chromium.executablePath
+            : "/opt/homebrew/bin/chromium",
+        headless:
+          process.env.URL ? chromium.headless : true,
+      });
 
     const page = await browser.newPage();
     await page.goto(`${protocol}://${url}/pdf?obfuscate=false`, {waitUntil: 'domcontentloaded'});
