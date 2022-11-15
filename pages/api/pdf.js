@@ -1,6 +1,6 @@
 // const chromium = require("@sparticuz/chromium");
 // const puppeteer = require("puppeteer-core");
-const chromium = require("@sparticuz/chrome-aws-lambda");
+const chromium = require("chrome-aws-lambda");
 
 async function handler(req, res) {
     const url = process.env.URL || "localhost:3000";
