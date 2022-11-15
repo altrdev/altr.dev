@@ -1,5 +1,5 @@
 const chromium = require("@sparticuz/chromium");
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 
 async function handler(req, res) {
     const url = process.env.URL || "localhost:3000";
