@@ -1,3 +1,4 @@
+const test = require("node:test");
 const puppeteer = require("puppeteer");
 const chromium = require("@sparticuz/chromium");
 
@@ -8,7 +9,7 @@ async function handler(req, res) {
         args: chromium.args,
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath,
-        headless: true,
+        headless: chromium.headless,
         ignoreHTTPSErrors: true,
       });
     
