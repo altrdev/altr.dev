@@ -1,4 +1,3 @@
-const test = require("node:test");
 const puppeteer = require("puppeteer");
 const chromium = require("@sparticuz/chromium");
 
