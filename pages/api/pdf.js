@@ -1,10 +1,11 @@
-const chromium = require("@sparticuz/chromium");
-const puppeteer = require("puppeteer-core");
+// const chromium = require("@sparticuz/chromium");
+// const puppeteer = require("puppeteer-core");
+const chromium = require("@sparticuz/chrome-aws-lambda");
 
 async function handler(req, res) {
     const url = process.env.URL || "localhost:3000";
     const protocol = req.headers['x-forwarded-proto'] || 'http';
-    const browser = await puppeteer.launch({
+    const browser = await chromium.puppeteer.launch({
         args: chromium.args,
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath,

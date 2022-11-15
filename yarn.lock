@@ -1369,12 +1369,12 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
-"@sparticuz/chromium@106":
-  version "106.0.2"
-  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-106.0.2.tgz#87436400a8b7efdb1d460b75d4051bbb0cc54598"
-  integrity sha512-YDbwmfyzLi2WqVjAONPjxlCxAfLPjx4TE7KdDNOyITDGx6KAktgpZ9qab77ZRU/6mmCwSdg+QO+OGQTXOEY/RA==
+"@sparticuz/chrome-aws-lambda@14.0.0":
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/@sparticuz/chrome-aws-lambda/-/chrome-aws-lambda-14.0.0.tgz#f980d75a42434510042bb4887aab7749cd738828"
+  integrity sha512-wV+gaKsLCV9abG1BFfuqQbptdxok6xMP5qFZJ+xZhOwWsVNL27Wgow/ad+Pfwc9GAbMZk7C/66Strw4q3K6AzA==
   dependencies:
-    tar-fs "^2.1.1"
+    lambdafs "^2.0.3"
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
@@ -1951,13 +1951,6 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
-cross-fetch@3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
-  integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
-  dependencies:
-    node-fetch "2.6.7"
-
 cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -1990,10 +1983,17 @@ damerau-levenshtein@^1.0.7:
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
-debug@4, debug@4.3.4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
+debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
+  dependencies:
+    ms "2.1.2"
+
+debug@4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
   dependencies:
     ms "2.1.2"
 
@@ -2054,10 +2054,10 @@ del@^4.1.1:
     pify "^4.0.1"
     rimraf "^2.6.3"
 
-devtools-protocol@0.0.1036444:
-  version "0.0.1036444"
-  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1036444.tgz#a570d3cdde61527c82f9b03919847b8ac7b1c2b9"
-  integrity sha512-0y4f/T8H9lsESV9kKP1HDUXgHxCdniFeJh6Erq+FbdOEvp/Ydp9t8kcAAM5gOd17pMrTDlFWntoHtzzeTUWKNw==
+devtools-protocol@0.0.937139:
+  version "0.0.937139"
+  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.937139.tgz#bdee3751fdfdb81cb701fd3afa94b1065dafafcf"
+  integrity sha512-daj+rzR3QSxsPRy5vjjthn58axO8c11j58uY0lG5vvlJk/EiOdCWOptGdkXDjtuRHr78emKq0udHCXM4trhoDQ==
 
 dir-glob@^3.0.1:
   version "3.0.1"
@@ -2754,10 +2754,10 @@ hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
   dependencies:
     react-is "^16.7.0"
 
-https-proxy-agent@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-5.0.1.tgz#c59ef224a04fe8b754f3db0063a25ea30d0005d6"
-  integrity sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==
+https-proxy-agent@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-5.0.0.tgz#e2a90542abb68a762e0a0850f6c9edadfd8506b2"
+  integrity sha512-EkYm5BcKUGiduxzSt3Eppko+PiNWNEpa4ySk9vTC6wDsQJW9rHSa+UhGNJoRYp7bz6Ht1eaRIa6QaJqO5rCFbA==
   dependencies:
     agent-base "6"
     debug "4"
@@ -3159,6 +3159,13 @@ jss@10.9.0, jss@^10.8.2:
     array-includes "^3.1.3"
     object.assign "^4.1.2"
 
+lambdafs@^2.0.3:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/lambdafs/-/lambdafs-2.1.1.tgz#4bf8d3037b6c61bbb4a22ab05c73ee47964c25ed"
+  integrity sha512-x5k8JcoJWkWLvCVBzrl4pzvkEHSgSBqFjg3Dpsc4AcTMq7oUMym4cL/gRTZ6VM4mUMY+M0dIbQ+V1c1tsqqanQ==
+  dependencies:
+    tar-fs "^2.1.1"
+
 language-subtag-registry@~0.3.2:
   version "0.3.21"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz#04ac218bea46f04cb039084602c6da9e788dd45a"
@@ -3363,10 +3370,10 @@ next@^13.0.3:
     "@next/swc-win32-ia32-msvc" "13.0.3"
     "@next/swc-win32-x64-msvc" "13.0.3"
 
-node-fetch@2.6.7:
-  version "2.6.7"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
-  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+node-fetch@2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.5.tgz#42735537d7f080a7e5f78b6c549b7146be1742fd"
+  integrity sha512-mmlIVHJEu5rnIxgEgez6b9GgWXbkZj5YZ7fx+2r94a2E+Uirsp6HsPTPlomfdHtpt/B0cdKviwkoaM6pyvUOpQ==
   dependencies:
     whatwg-url "^5.0.0"
 
@@ -3577,7 +3584,7 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-pkg-dir@^4.1.0:
+pkg-dir@4.2.0, pkg-dir@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-4.2.0.tgz#f099133df7ede422e81d1d8448270eeb3e4261f3"
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
@@ -3635,22 +3642,23 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-puppeteer-core@18.0.5:
-  version "18.0.5"
-  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-18.0.5.tgz#c37e0f52e92f1c91bf56cebc5a718f00698a5566"
-  integrity sha512-JM83vUAmWdzZfUEDTGlkSdGFq0/TiVbFjQrb6BJVeLJAWVYlkO4YvyFAaTWdCM5Kz+ovg4g7xOSAU4FRh4Cv/w==
+puppeteer@13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-13.0.0.tgz#f241d9bbbe5c8388da922f4f6ea3f84866e17f81"
+  integrity sha512-kZfGAieIVSo4bFqYuvY2KvhgP9txzmPbbnpZIzLlfdt8nEu9evXEwsbBt1BHocVQM4fJmCiS+FRyw7c8aWadNg==
   dependencies:
-    cross-fetch "3.1.5"
-    debug "4.3.4"
-    devtools-protocol "0.0.1036444"
+    debug "4.3.2"
+    devtools-protocol "0.0.937139"
     extract-zip "2.0.1"
-    https-proxy-agent "5.0.1"
+    https-proxy-agent "5.0.0"
+    node-fetch "2.6.5"
+    pkg-dir "4.2.0"
     progress "2.0.3"
     proxy-from-env "1.1.0"
     rimraf "3.0.2"
     tar-fs "2.1.1"
     unbzip2-stream "1.4.3"
-    ws "8.8.1"
+    ws "8.2.3"
 
 query-string@^7.0.0:
   version "7.1.1"
@@ -4152,7 +4160,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tar-fs@2.1.1, tar-fs@^2.1.1:
+tar-fs@*, tar-fs@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-2.1.1.tgz#489a15ab85f1f0befabb370b7de4f9eb5cbe8784"
   integrity sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==
@@ -4624,10 +4632,10 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
-ws@8.8.1:
-  version "8.8.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.1.tgz#5dbad0feb7ade8ecc99b830c1d77c913d4955ff0"
-  integrity sha512-bGy2JzvzkPowEJV++hF07hAD6niYSr0JzBNo/J29WsB57A2r7Wlc1UFcTR9IzrPvuNVO4B8LGqF8qcpsVOhJCA==
+ws@8.2.3:
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.2.3.tgz#63a56456db1b04367d0b721a0b80cae6d8becbba"
+  integrity sha512-wBuoj1BDpC6ZQ1B7DWQBYVLphPWkm8i9Y0/3YdHjHKHiohOJ1ws+3OccDWtH+PoC9DZD5WOTrJvNbWvjS6JWaA==
 
 yallist@^4.0.0:
   version "4.0.0"
