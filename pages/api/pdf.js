@@ -13,7 +13,8 @@ async function handler(req, res) {
     
 
     const page = await browser.newPage();
-    await page.goto(`${protocol}://${url}/pdf?obfuscate=false`);
+    await page.goto(`${protocol}://${url}/pdf?obfuscate=false`, {waitUntil: 'networkidle0'});
+    
     const pdf = await page.pdf({
         displayHeaderFooter: false,
         format: 'letter',
