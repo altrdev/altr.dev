@@ -1351,10 +1351,10 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.1.tgz#782fa5da44c4f38ae9fd38e9184b54e451936118"
   integrity sha512-BUyKJGdDWqvWC5GEhyOiUrGNi9iJUr4CU0O2WxJL6QJhHeeA/NVBalH+FeK0r/x/W0rPymXt5s78TDS7d6lCwg==
 
-"@sparticuz/chromium@106":
-  version "106.0.2"
-  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-106.0.2.tgz#87436400a8b7efdb1d460b75d4051bbb0cc54598"
-  integrity sha512-YDbwmfyzLi2WqVjAONPjxlCxAfLPjx4TE7KdDNOyITDGx6KAktgpZ9qab77ZRU/6mmCwSdg+QO+OGQTXOEY/RA==
+"@sparticuz/chromium@107":
+  version "107.0.0"
+  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-107.0.0.tgz#eba6618a8a70d18105c273b933985159ae38b8fd"
+  integrity sha512-k5J8y36j5YRYfzBwnyBIiN4zsy6ZZMRIAVj8em7IqISrf/9lB/bpdEK1i/sUXtxr1S4qTDAopVNSqBLbTFL0GQ==
   dependencies:
     tar-fs "^2.1.1"
 
@@ -3528,10 +3528,10 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-puppeteer-core@19.2.2:
-  version "19.2.2"
-  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-19.2.2.tgz#a9b7b25099d87d550c224c660c205b7ebdd03eb4"
-  integrity sha512-faojf+1pZ/tHXSr4x1q+9MVd9FrL3rpdbC0w7qN7MNClMoLuCvMbpR4vzcjoiJYgclt1n+SOPUOmHQViTw6frw==
+puppeteer-core@19.2.0:
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-19.2.0.tgz#b2502a74b01725bfdd92f984faa4915166aee996"
+  integrity sha512-wdoZDzf46y1ScpPEUDAzIWDmvG272BbdqSvDMvtYNjy2UJZT/j5OS5k813o2lfT4HtOle79eByCLs24iXbat1g==
   dependencies:
     cross-fetch "3.1.5"
     debug "4.3.4"
@@ -3544,17 +3544,17 @@ puppeteer-core@19.2.2:
     unbzip2-stream "1.4.3"
     ws "8.10.0"
 
-puppeteer@19.2.2:
-  version "19.2.2"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-19.2.2.tgz#e6f7bc089ac9bffea78b2f792bf3affd93e16803"
-  integrity sha512-m1T5Mog5qu5+dMBptWYTn6pXRdnFbydbVUCthqwbfd8/kOiMlzZBR9ywjX79LpvI1Sj+/z8+FKeIsjnMul8ZYA==
+puppeteer@19.2.0:
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-19.2.0.tgz#6d39c6b6da4a648928d8dc736b864de493f175f7"
+  integrity sha512-rhr5ery8htpOTikmm/wrDU707wtmJ7ccX2WLkBf0A8eYYpscck5/iz04/fHOiIRWMFfnYOvaO9wNb4jcO3Mjyg==
   dependencies:
     cosmiconfig "7.0.1"
     devtools-protocol "0.0.1056733"
     https-proxy-agent "5.0.1"
     progress "2.0.3"
     proxy-from-env "1.1.0"
-    puppeteer-core "19.2.2"
+    puppeteer-core "19.2.0"
 
 query-string@^7.0.0:
   version "7.1.1"
