@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => {
             borderColor: theme.palette.primary.main,
             boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
             padding: 4,
+            WebkitOverflowScrolling: "touch"
         },
         divCircular: {
             height: "100%",
