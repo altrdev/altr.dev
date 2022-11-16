@@ -62,7 +62,7 @@ export default function ModalResume({ show, toggleModal }) {
                 <CircularProgress color="primary"/>
             </div>
         ) : (
-          <iframe width="100%" height="100%" src={data}></iframe>
+          <iframe width="100%" height="100%" src={`${data}#view=fitH`}></iframe>
         )}
       </Box>
     </Modal>
