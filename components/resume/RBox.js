@@ -32,7 +32,7 @@ const RBox = ({icon,text,children}) => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Typography variant="body1" align="left" className={classes.boxDesc}>
+            <Typography variant="body1" align="left" className={classes.boxDesc} component="div">
                 {children}
             </Typography>
         </div>

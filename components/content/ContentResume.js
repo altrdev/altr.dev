@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import Title from './ContentTitle';
 import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
@@ -8,6 +9,7 @@ import { Paper, Grid, Link, Fab, IconButton, Typography } from "@mui/material";
 
 import createStyles from '@mui/styles/createStyles';
 import makeStyles from '@mui/styles/makeStyles';
+import ModalResume from '../Modal';
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -78,10 +80,16 @@ const useStyles = makeStyles(theme => {
 
 const ContentResume = ({...props}) => {
 
+    const [show, setShow] = useState(false);
+
+    function toggleModal() {
+        setShow(!show);
+    }
+
     const classes = useStyles();
     return (
         <div className={classes.layout}>
-            <Link href="/api/pdf" target={"_blank"}>
+            <Link onClick={() => toggleModal()} >
                 <Fab variant="extended" aria-label="Download" color="primary">
                     <DownloadIcon className={classes.extendedIcon} />
                     {props.content.labels.download}
@@ -133,6 +141,7 @@ const ContentResume = ({...props}) => {
                     );
                 })}
             </Grid>
+            <ModalResume show={show} toggleModal={toggleModal}/>
         </div>
     );
 
