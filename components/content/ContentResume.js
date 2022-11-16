@@ -9,7 +9,6 @@ import { Paper, Grid, Link, Fab, IconButton, Typography } from "@mui/material";
 
 import createStyles from '@mui/styles/createStyles';
 import makeStyles from '@mui/styles/makeStyles';
-import ModalResume from '../Modal';
 
 const useStyles = makeStyles(theme => {
     return createStyles({
@@ -80,16 +79,10 @@ const useStyles = makeStyles(theme => {
 
 const ContentResume = ({...props}) => {
 
-    const [show, setShow] = useState(false);
-
-    function toggleModal() {
-        setShow(!show);
-    }
-
     const classes = useStyles();
     return (
         <div className={classes.layout}>
-            <Link onClick={() => toggleModal()} >
+            <Link href={`https://api.microlink.io/?url=${encodeURIComponent("https://altr.dev/pdf?obfuscate=false")}&pdf=true&embed=pdf.url&scale=1&margin=0.4cm&format=letter`} target="_blank">
                 <Fab variant="extended" aria-label="Download" color="primary">
                     <DownloadIcon className={classes.extendedIcon} />
                     {props.content.labels.download}
@@ -141,7 +134,6 @@ const ContentResume = ({...props}) => {
                     );
                 })}
             </Grid>
-            <ModalResume show={show} toggleModal={toggleModal}/>
         </div>
     );
 
