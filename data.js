@@ -1,4 +1,4 @@
-import { mdiLinkedin, mdiInstagram, mdiGithub, mdiTwitter } from '@mdi/js'
+import { siLinkedin, siInstagram, siGithub, siX } from 'simple-icons';
 
 let id = 0;
 function createData(label, value) {
@@ -25,10 +25,10 @@ export const floatingIntro = {
     workTitle: "Crazy Software Engineer",
     description: "I’m a software engineer always willing to put myself out there and push myself beyond my limits.\nRight after high school diploma, while working as postman, I started challenging myself with both personal side-projects and freelance consulting.\nI'm not sure what being a 'self starter' means, but people tends to call me that.",
     icons: [
-        createData(mdiLinkedin, "https://www.linkedin.com/in/alessandrotravi/en"),
-        createData(mdiGithub, "https://github.com/altrdev/"),
-        createData(mdiInstagram, "https://www.instagram.com/alessandro.travi/"),
-        createData(mdiTwitter, "https://twitter.com/altrdev")
+        createData(siLinkedin.path, "https://www.linkedin.com/in/alessandrotravi/en"),
+        createData(siGithub.path, "https://github.com/altrdev/"),
+        createData(siInstagram.path, "https://www.instagram.com/alessandro.travi/"),
+        createData(siX.path, "https://twitter.com/altrdev")
     ],
     tableRows: [
         createData("BirthDate", "09/04/1990"),
