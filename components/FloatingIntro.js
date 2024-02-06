@@ -118,7 +118,7 @@ const FloatingIntro = ({...props}) =>  {
                 <div style={{margin: 'auto'}}>
                   {props.floatingIntro.icons.map(icon => (
                       <Link key={icon.id} href={icon.value} target="_blank" rel="noopener" color="inherit" className={classes.link}>
-                        <Icon path={icon.label} size={1.2} className={classes.icon}/>
+                        <Icon path={icon.label} size={1.0} className={classes.icon}/>
                       </Link>
                   ))}
                 </div>
