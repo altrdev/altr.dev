@@ -123,8 +123,8 @@ export const content = {
         },
         {
             title: "3D Printing",
-            link: "https://www.thingiverse.com/altr_dev/about",
-            description: "3d print DIY assembling on Josef Prusa model \nFew projects to be found on Thingiverse (altr_dev)"
+            link: "https://www.printables.com/it/@altrdev",
+            description: "3d print DIY assembling on Josef Prusa model \nFew projects to be found on Printables (altrdev)"
         },
         {
             title: "TriggerT",
