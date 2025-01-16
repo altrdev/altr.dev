@@ -23,7 +23,7 @@ export const titles = {
 export const floatingIntro = {
     name: "Alessandro Travi",
     workTitle: "Crazy Software Engineer",
-    description: "I’m a software engineer always willing to put myself out there and push myself beyond my limits.\nRight after high school diploma, while working as postman, I started challenging myself with both personal side-projects and freelance consulting.\nI'm not sure what being a 'self starter' means, but people tends to call me that.",
+    description: "I’m a software engineer who is always eager to step outside my comfort zone and push myself beyond my limits.\nAfter graduating from high school, while working as a postman, I began challenging myself with personal side projects and freelance consulting.\nI’m not entirely sure what it means to be a 'self-starter,' but people tend to call me that.",
     icons: [
         createData(siLinkedin.path, "https://www.linkedin.com/in/alessandrotravi/en"),
         createData(siGithub.path, "https://github.com/altrdev/"),
