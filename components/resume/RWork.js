@@ -1,45 +1,39 @@
 import { Grid, Typography } from "@mui/material";
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
 import Icon from "@mdi/react";
 import {mdiCalendar} from '@mdi/js'
 
-
-const useStyles = makeStyles(theme => {
-    return createStyles({
-        container: {
-            paddingTop: 20,
-        },
-        title: {
-            fontWeight: 600,
-        },
-        date: {
-            fontWeight: 500,
-            color: "#212529"
-        },
-        boxDesc: {
-            padding: "10px 0px"
-        },
-        contrastTitle: {
-            borderRadius: ".25rem",
-            backgroundColor: "#33333d",
-            color: "#fff",
-            padding: "5px 8px",
-            lineHeight: 2
-        },
-    })
-});
-
 const RWork = ({...props}) => {
+    const containerStyle = {
+        paddingTop: 20,
+    };
 
-    const classes = useStyles();
+    const titleStyle = {
+        fontWeight: 600,
+    };
+
+    const dateStyle = {
+        fontWeight: 500,
+        color: "#212529"
+    };
+
+    const boxDescStyle = {
+        padding: "10px 0px"
+    };
+
+    const contrastTitleStyle = {
+        borderRadius: ".25rem",
+        backgroundColor: "#33333d",
+        color: "#fff",
+        padding: "5px 8px",
+        lineHeight: 2
+    };
 
     return (
-        <div className={classes.container}>
+        <div style={containerStyle}>
             <Grid container>
                 <Grid item>
-                    <Typography variant="h5" className={classes.title}>
-                        <span className={classes.contrastTitle}>{props.title}</span> at {props.company}
+                    <Typography variant="h5" sx={titleStyle}>
+                        <span style={contrastTitleStyle}>{props.title}</span> at {props.company}
                     </Typography>
                 </Grid>
             </Grid>
@@ -48,12 +42,12 @@ const RWork = ({...props}) => {
                     <Icon path={mdiCalendar} color="#212529" size={0.8} />
                 </Grid>
                 <Grid item>
-                    <Typography variant="subtitle1" className={classes.date}>
+                    <Typography variant="subtitle1" sx={dateStyle}>
                         {props.date}
                     </Typography>
                 </Grid>
             </Grid>
-            <Typography variant="body1" align="left" className={classes.boxDesc} style={{whiteSpace: "pre-wrap"}}>
+            <Typography variant="body1" align="left" sx={boxDescStyle} style={{whiteSpace: "pre-wrap"}}>
                 {props.description}
             </Typography>
         </div>

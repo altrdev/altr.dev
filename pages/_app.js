@@ -3,6 +3,8 @@ import '../styles/animate.css'
 import '../styles/timeline.css'
 import '../styles/app.css'
 import {useEffect} from "react";
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../utils/theme';
 
 export default function MyApp(props) {
     const { Component, pageProps } = props;
@@ -13,11 +15,25 @@ export default function MyApp(props) {
         if (jssStyles) {
             jssStyles.parentElement.removeChild(jssStyles);
         }
+
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+            navigator.serviceWorker
+                .register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registered:', registration);
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
     }, []);
 
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider theme={theme}>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </ThemeProvider>
     );
 }
