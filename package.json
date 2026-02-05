@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.14.1",
     "@mdi/js": "^5.9.55",
     "@mdi/react": "^1.5.0",
-    "@microlink/mql": "^0.10.30",
+    "@microlink/mql": "^0.14.0",
     "@mui/icons-material": "^7.3.7",
     "@mui/material": "^7.3.7",
     "moment": "^2.29.4",
