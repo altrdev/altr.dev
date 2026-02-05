@@ -24,6 +24,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-obfuscate": "^3.6.8",
+    "sharp": "^0.34.5",
     "simple-icons": "^11.3.0"
   },
   "devDependencies": {
