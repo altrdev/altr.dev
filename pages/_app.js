@@ -3,6 +3,8 @@ import '../styles/animate.css'
 import '../styles/timeline.css'
 import '../styles/app.css'
 import {useEffect} from "react";
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../utils/theme';
 
 export default function MyApp(props) {
     const { Component, pageProps } = props;
@@ -16,8 +18,10 @@ export default function MyApp(props) {
     }, []);
 
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider theme={theme}>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </ThemeProvider>
     );
 }

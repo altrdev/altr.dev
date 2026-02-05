@@ -1,66 +1,62 @@
 import { Typography } from "@mui/material";
-
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles(theme => {
-    return createStyles({
-        event: {
-            borderBottom: "1px solid rgba(160, 160, 160, 0.2)",
-            paddingBottom: 15,
-            marginBottom: 20,
-            position: "relative",
-            '&:before': {
-                position: "absolute",
-                display: "block",
-                top: 0
-            },
-            '&:after': {
-                boxShadow: `0 0 0 8px ${theme.palette.primary.main}`,
-                left: -30,
-                background: "#fff",
-                borderRadius: "50%",
-                height: 11,
-                width: 11,
-                content: "close-quote",
-                top: 5,
-                position: "absolute",
-                display: "block"
-            },
-            '&:last-of-type': {
-                paddingBottom: 0,
-                marginBottom: 0,
-                border: "none"
-            }
-        },
-        company: {
-            fontWeight: 600,
-            color: theme.palette.text.secondary
-        },
-        title: {
-            fontWeight: 600,
-            marginBottom: theme.spacing(1)
-        },
-        date: {
-            fontWeight: 400,
-            color: theme.palette.text.secondary,
-            float: 'right',
-            textAlign: 'right'
-        }
-    })
-});
+import { useTheme } from '@mui/material/styles';
 
 const TimelineItem = ({...props}) => {
+    const theme = useTheme();
 
-    const classes = useStyles();
+    const eventStyle = {
+        borderBottom: "1px solid rgba(160, 160, 160, 0.2)",
+        paddingBottom: 15,
+        marginBottom: 20,
+        position: "relative",
+        '&:before': {
+            position: "absolute",
+            display: "block",
+            top: 0
+        },
+        '&:after': {
+            boxShadow: `0 0 0 8px ${theme.palette.primary.main}`,
+            left: -30,
+            background: "#fff",
+            borderRadius: "50%",
+            height: 11,
+            width: 11,
+            content: "close-quote",
+            top: 5,
+            position: "absolute",
+            display: "block"
+        },
+        '&:last-of-type': {
+            paddingBottom: 0,
+            marginBottom: 0,
+            border: "none"
+        }
+    };
+
+    const companyStyle = {
+        fontWeight: 600,
+        color: theme.palette.text.secondary
+    };
+
+    const titleStyle = {
+        fontWeight: 600,
+        marginBottom: theme.spacing(1)
+    };
+
+    const dateStyle = {
+        fontWeight: 400,
+        color: theme.palette.text.secondary,
+        float: 'right',
+        textAlign: 'right'
+    };
 
     return (
 
-        <li className={classes.event}>
-            <Typography variant="subtitle1" className={classes.company}>{props.company}</Typography>
-            <Typography variant="h5" className={classes.title}>
+        <li style={eventStyle} className="timeline-event">
+            <Typography variant="subtitle1" sx={companyStyle}>{props.company}</Typography>
+            <Typography variant="h5" sx={titleStyle}>
                 {props.title}
-                <Typography variant="subtitle1" component="span" className={classes.date}>{props.date}</Typography>
+                <Typography variant="subtitle1" component="span" sx={dateStyle}>{props.date}</Typography>
             </Typography>
             <Typography variant="body1" style={{whiteSpace: "pre-wrap"}}>{props.description}</Typography>
         </li>
