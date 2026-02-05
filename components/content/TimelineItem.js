@@ -8,29 +8,7 @@ const TimelineItem = ({...props}) => {
         borderBottom: "1px solid rgba(160, 160, 160, 0.2)",
         paddingBottom: 15,
         marginBottom: 20,
-        position: "relative",
-        '&:before': {
-            position: "absolute",
-            display: "block",
-            top: 0
-        },
-        '&:after': {
-            boxShadow: `0 0 0 8px ${theme.palette.primary.main}`,
-            left: -30,
-            background: "#fff",
-            borderRadius: "50%",
-            height: 11,
-            width: 11,
-            content: "close-quote",
-            top: 5,
-            position: "absolute",
-            display: "block"
-        },
-        '&:last-of-type': {
-            paddingBottom: 0,
-            marginBottom: 0,
-            border: "none"
-        }
+        position: "relative"
     };
 
     const companyStyle = {
