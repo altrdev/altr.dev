@@ -1,25 +1,18 @@
 import { Divider } from "@mui/material";
-
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles(theme => {
-    return createStyles({
-        divider: {
-            backgroundColor: theme.palette.primary.main,
-            width: 50,
-            height: 3,
-            marginBottom: theme.spacing(1)
-        }
-    })
-});
+import { useTheme } from '@mui/material/styles';
 
 const CustomDivider = () => {
-
-    const classes  = useStyles();
+    const theme = useTheme();
+    
+    const dividerStyle = {
+        backgroundColor: theme.palette.primary.main,
+        width: 50,
+        height: 3,
+        marginBottom: theme.spacing(1)
+    };
 
     return (
-        <Divider variant="fullWidth" className={classes.divider}/>
+        <Divider variant="fullWidth" sx={dividerStyle}/>
     );
 
 }

@@ -1,14 +1,17 @@
-/**
- * @type {import('next').NextConfig}
- */
-const prod = process.env.NODE_ENV === 'production'
+/** @type {import('next').NextConfig} */
+const nextConfig = {
 
-const withPWA = require("next-pwa")({
-    dest: "public",
-    disable: prod ? false : true
-});
-
-const nextConfig = withPWA({
-});
+  typescript: { ignoreBuildErrors: false, tsconfigPath: 'tsconfig.json' },
+  images: { /* tue config */ },
+  modularizeImports: {
+    '@mui/icons-material': { transform: '@mui/icons-material/{{member}}' },
+    lodash: { transform: 'lodash/{{member}}' },
+  },
+  turbopack: {
+    resolveAlias: {
+      '@/*': './*',
+    },
+  },
+}
 
 module.exports = nextConfig

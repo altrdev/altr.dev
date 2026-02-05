@@ -1,5 +1,27 @@
 
 
+
+/* Timeline event dot/circle */
+.timeline-event::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: -30px;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #0EB57D;
+}
+
+/* Remove border and spacing from last timeline event */
+.timeline-event:last-of-type {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
 @media (max-width: 945px) {
     .timeline h3 {
         font-size: 16px;

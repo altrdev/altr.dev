@@ -1,64 +1,72 @@
-import { Grid, Typography } from "@mui/material";
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import { Box, Typography, Paper } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 import Icon from "@mdi/react";
 import {mdiStar} from "@mdi/js";
 
-const useStyles = makeStyles(theme => {
-    return createStyles({
-        stars: {
-            verticalAlign: "text-top",
-            paddingRight: "5px",
-            color: theme.palette.primary.main
-        },
-        grid: {
-            paddingBottom: "10px"
-        }
-    })
-});
-
 const RSkills = ({textProficient,textComfortable,textFamiliar}) => {
+    const theme = useTheme();
 
-    const classes = useStyles();
+    const starsStyle = {
+        verticalAlign: "text-top",
+        paddingRight: "5px",
+        color: theme.palette.primary.main
+    };
+
+    const skillBoxStyle = {
+        flex: { xs: '0 0 100%', sm: '0 0 100%', md: 'calc(50% - 8px)', lg: 'calc(33.333% - 11px)' },
+        paddingBottom: "10px",
+        textAlign: 'center'
+    };
+
+    const contentStyle = {
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
+        wordBreak: 'break-word'
+    };
+
     return (
-        <Grid container spacing={2}>
-            <Grid item xs={12} sm={12} md={6} lg={4} className={classes.grid}>
+        <Box sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: theme.spacing(2)
+        }}>
+            <Box sx={skillBoxStyle}>
                 <Typography variant="h6">
-                    <span className={classes.stars}>
+                    <span style={starsStyle}>
                         <Icon path={mdiStar} size="1.5rem"/>
                         <Icon path={mdiStar} size="1.5rem" style={{opacity: ".75"}}/>
                         <Icon path={mdiStar} size="1.5rem" style={{opacity: ".5"}}/>
                     </span>
                     Proficient
                 </Typography>
-                <div>
+                <div style={contentStyle}>
                     {textProficient}
                 </div>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={4} className={classes.grid}>
+            </Box>
+            <Box sx={skillBoxStyle}>
                 <Typography variant="h6">
-                    <span className={classes.stars}>
+                    <span style={starsStyle}>
                         <Icon path={mdiStar} size="1.5rem" style={{opacity: ".75"}}/>
                         <Icon path={mdiStar} size="1.5rem" style={{opacity: ".5"}}/>
                     </span>
                     Comfortable
                 </Typography>
-                <div>
+                <div style={contentStyle}>
                     {textComfortable}
                 </div>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={4} className={classes.grid}>
+            </Box>
+            <Box sx={skillBoxStyle}>
                 <Typography variant="h6">
-                    <span className={classes.stars}>
+                    <span style={starsStyle}>
                         <Icon path={mdiStar} size="1.5rem" style={{opacity: ".5"}}/>
                     </span>
                     Familiar
                 </Typography>
-                <div>
+                <div style={contentStyle}>
                     {textFamiliar}
                 </div>
-            </Grid>
-        </Grid>
+            </Box>
+        </Box>
     );
 
 }

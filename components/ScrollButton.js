@@ -1,37 +1,36 @@
 import Up from '@mui/icons-material/KeyboardArrowUp';
 import { Fab } from "@mui/material";
 
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles(theme => {
-    return createStyles({
-        fabButton: {
-            position: 'absolute',
-            zIndex: 1,
-            top: -30,
-            left: 0,
-            right: 0,
-            margin: '0 auto',
-        }
-    })
-});
-
 const ScrollButton = ({...props}) => {
+
+    let scrollAnimationId = null;
 
     const scrollToTop = () => {
         const c = document.documentElement.scrollTop || document.body.scrollTop;
 
-        if (c > 0) {
-            window.requestAnimationFrame(scrollToTop);
+        if (c > 10) {
+            scrollAnimationId = window.requestAnimationFrame(scrollToTop);
             window.scrollTo(0, c - c / props.delayInMs);
+        } else {
+            window.scrollTo(0, 0);
+            if (scrollAnimationId) {
+                window.cancelAnimationFrame(scrollAnimationId);
+                scrollAnimationId = null;
+            }
         }
     };
 
-    const classes  = useStyles(props);
+    const fabButtonStyle = {
+        position: 'absolute',
+        zIndex: 1,
+        top: -30,
+        left: 0,
+        right: 0,
+        margin: '0 auto',
+    };
         
     return (
-        <Fab color="primary" onClick={()=>scrollToTop()} aria-label="Go to top" className={classes.fabButton}>
+        <Fab color="primary" onClick={()=>scrollToTop()} aria-label="Go to top" sx={fabButtonStyle}>
             <Up />
         </Fab>
     );

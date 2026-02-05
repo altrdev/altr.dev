@@ -5,91 +5,102 @@ import TimelineItem from './TimelineItem';
 import RSkills from "../resume/RSkills";
 import DownloadIcon from '@mui/icons-material/CloudDownload';
 import LinkIcon from '@mui/icons-material/Link';
-import { Paper, Grid, Link, Fab, IconButton, Typography } from "@mui/material";
-
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles(theme => {
-    return createStyles({
-        layout: {
-            width: 'auto',
-            marginLeft: theme.spacing(2),
-            marginRight: theme.spacing(2),
-            marginBottom: theme.spacing(10),
-            height: "100%",
-            fontSize: '1rem',
-            textAlign: "center",
-            paddingTop:20,
-            [theme.breakpoints.up('lg')]: {
-                width: theme.breakpoints.values['lg'] - Number(theme.spacing(3).slice(0, -2)),
-                marginLeft: 'auto',
-                marginRight: 'auto',
-            }
-        },
-        extendedIcon: {
-            marginRight: theme.spacing(1)
-        },
-        mainPaper: {
-            padding: theme.spacing(2),
-            [theme.breakpoints.up(600 + theme.spacing(6))]: {
-                padding: theme.spacing(3)
-            }
-        },
-        paper: {
-            padding: theme.spacing(2),
-            textAlign: 'center',
-            color: theme.palette.text.secondary,
-            boxShadow: 'none'
-        },
-        progressWrapper: {
-            marginTop: theme.spacing(4),
-            textAlign: 'left'
-        },
-        spanPercentage: {
-            float: 'right',
-            textAlign: 'right'
-        },
-        descriptionLabel: {
-            fontWeight: 600,
-            color: theme.palette.text.secondary
-        },
-        progress: {
-            height: 6
-        },
-        timelineBox: {
-            padding: theme.spacing(2),
-            [theme.breakpoints.up(600 + theme.spacing(6))]: {
-                padding: theme.spacing(3)
-            },
-            borderLeft: 3
-        },
-        borderTop:{
-            borderTop: `4px solid ${theme.palette.primary.main}`
-        },
-        projectTitle: {
-            fontWeight: 600,
-            marginBottom: theme.spacing(1)
-        },
-        marginIcon: {
-            marginLeft: theme.spacing(1)
-        }
-    })
-});
+import { Paper, Grid, Link, Fab, IconButton, Typography, Box } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 
 const ContentResume = ({...props}) => {
+    const theme = useTheme();
+    
+    const lgWidth = theme.breakpoints.values['lg'] - Number(theme.spacing(3).slice(0, -2));
+    
+    const layoutStyle = {
+        width: 'auto',
+        maxWidth: '1200px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginBottom: theme.spacing(10),
+        height: "100%",
+        fontSize: '1rem',
+        textAlign: "center",
+        paddingTop:20,
+        padding: theme.spacing(1),
+        [theme.breakpoints.up('sm')]: {
+            padding: theme.spacing(2),
+        },
+        [theme.breakpoints.up('md')]: {
+            padding: theme.spacing(3),
+        },
+    };
 
-    const classes = useStyles();
+    const extendedIconStyle = {
+        marginRight: theme.spacing(1)
+    };
+
+    const mainPaperStyle = {
+        padding: theme.spacing(2),
+        [theme.breakpoints.up(600 + theme.spacing(6))]: {
+            padding: theme.spacing(3)
+        },
+        textAlign: 'left'
+    };
+
+    const paperStyle = {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        boxShadow: 'none'
+    };
+
+    const progressWrapperStyle = {
+        marginTop: theme.spacing(4),
+        textAlign: 'left'
+    };
+
+    const spanPercentageStyle = {
+        float: 'right',
+        textAlign: 'right'
+    };
+
+    const descriptionLabelStyle = {
+        fontWeight: 600,
+        color: theme.palette.text.secondary
+    };
+
+    const progressStyle = {
+        height: 6
+    };
+
+    const timelineBoxStyle = {
+        padding: theme.spacing(2),
+        [theme.breakpoints.up(600 + theme.spacing(6))]: {
+            padding: theme.spacing(3)
+        },
+        borderLeft: 3
+    };
+
+    const borderTopStyle = {
+        borderTop: `4px solid ${theme.palette.primary.main}`
+    };
+
+    const projectTitleStyle = {
+        fontWeight: 600,
+        marginBottom: theme.spacing(1)
+    };
+
+    const marginIconStyle = {
+        marginLeft: theme.spacing(1)
+    };
+
     return (
-        <div className={classes.layout}>
+        <Box sx={layoutStyle}>
             <Link href={`https://api.microlink.io/?url=${encodeURIComponent("https://altr.dev/pdf?obfuscate=false")}&pdf=true&embed=pdf.url&scale=1&margin=0.4cm&format=letter`} target="_blank">
                 <Fab variant="extended" aria-label="Download" color="primary">
-                    <DownloadIcon className={classes.extendedIcon} />
+                    <DownloadIcon sx={extendedIconStyle} />
                     {props.content.labels.download}
                 </Fab>
             </Link>
             <Title value={props.titles.skills} />
-            <Paper className={classes.mainPaper}>
+            <Paper sx={mainPaperStyle}>
                 <RSkills
                     textProficient={props.content.skills.proficient}
                     textComfortable={props.content.skills.comfortable}
@@ -109,12 +120,18 @@ const ContentResume = ({...props}) => {
                 })}
             </Timeline>
             <Title value={props.titles.projects} />
-            <Grid container spacing={3}>
+            <Box sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: theme.spacing(3)
+            }}>
                 {props.content.personalProjects.map((project, i) => {
                     return (
-                        <Grid key={i} item xs={12} sm={4}>
-                            <Paper className={`${classes.mainPaper} ${classes.borderTop}`} style={{height: "100%"}}>
-                                <Typography variant="h6" align="left" className={classes.projectTitle}>
+                        <Box key={i} sx={{
+                            flex: { xs: '0 0 100%', sm: 'calc(50% - 12px)', md: 'calc(33.333% - 20px)' }
+                        }}>
+                            <Paper sx={{...mainPaperStyle, ...borderTopStyle, height: "100%"}}>
+                                <Typography variant="h6" align="left" sx={projectTitleStyle}>
                                     {project.title}
                                     {project.link ?
                                         <IconButton
@@ -122,7 +139,7 @@ const ContentResume = ({...props}) => {
                                             color="primary"
                                             href={project.link}
                                             target="_blank"
-                                            className={classes.marginIcon}
+                                            sx={marginIconStyle}
                                             size="large">
                                             <LinkIcon fontSize="small" />
                                         </IconButton>
@@ -130,11 +147,11 @@ const ContentResume = ({...props}) => {
                                 </Typography>
                                 <Typography variant="body1" align="left" style={{whiteSpace: "pre-wrap"}}>{project.description}</Typography>
                             </Paper>
-                        </Grid>
+                        </Box>
                     );
                 })}
-            </Grid>
-        </div>
+            </Box>
+        </Box>
     );
 
 }
