@@ -5,6 +5,7 @@ import '../styles/app.css'
 import {useEffect} from "react";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../utils/theme';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function MyApp(props) {
     const { Component, pageProps } = props;
@@ -34,6 +35,7 @@ export default function MyApp(props) {
             <Layout>
                 <Component {...pageProps} />
             </Layout>
+            <SpeedInsights />
         </ThemeProvider>
     );
 }
