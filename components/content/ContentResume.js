@@ -92,7 +92,7 @@ const ContentResume = ({...props}) => {
     };
 
     return (
-        <div style={layoutStyle}>
+        <Box sx={layoutStyle}>
             <Link href={`https://api.microlink.io/?url=${encodeURIComponent("https://altr.dev/pdf?obfuscate=false")}&pdf=true&embed=pdf.url&scale=1&margin=0.4cm&format=letter`} target="_blank">
                 <Fab variant="extended" aria-label="Download" color="primary">
                     <DownloadIcon sx={extendedIconStyle} />
@@ -151,7 +151,7 @@ const ContentResume = ({...props}) => {
                     );
                 })}
             </Box>
-        </div>
+        </Box>
     );
 
 }
