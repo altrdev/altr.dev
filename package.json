@@ -6,13 +6,18 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "astro build && node scripts/resume.mjs",
+    "preview": "astro preview",
+    "resume": "astro build && node scripts/resume.mjs --update-public"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
     "@vercel/speed-insights": "^2.0.0",
     "astro": "^7.3.8",
     "simple-icons": "^11.3.0"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "^153.0.0",
+    "puppeteer-core": "^25.14.0"
   }
 }

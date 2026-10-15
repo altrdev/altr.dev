@@ -30,7 +30,16 @@ html[data-print] a { color: #111; text-decoration: none; }
   .cols { grid-template-columns: 1fr; }
 }
 
+@page { size: A4; margin: 12mm; }
+
 @media print {
-  html[data-print] body { font-size: 12px; }
+  html[data-print] body { font-size: 11px; line-height: 1.42; }
   .sheet { max-width: none; padding: 0; }
+  .sheet header { padding-bottom: 10px; margin-bottom: 14px; }
+  .sheet h1 { font-size: 26px; }
+  .sheet section { margin-bottom: 14px; }
+  .sheet article { margin-bottom: 10px; }
+  .sheet article h3 { font-size: 13px; }
+  .sheet .prose, .sheet aside p { font-size: 11px; }
+  .sheet h2 { break-after: avoid; }
 }
