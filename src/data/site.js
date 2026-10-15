@@ -127,6 +127,13 @@ export const content = {
             description: "Battery-powered Zigbee sensor that tells Home Assistant when the wind is shaking your awning.\nESP32-H2, custom PCB, 3D-printed enclosure."
         },
         {
+            title: "Basecamp-UI",
+            link: "https://basecamp-ui.altr.dev",
+            soon: true,
+            badge: "Coming soon",
+            description: "A custom UI for Home Assistant, built as a custom panel instead of Lovelace."
+        },
+        {
             title: "Thook",
             link: "https://thook.altr.dev",
             description: "Simply receive notifications in Telegram. \nEntire Serverless project with Firebase Functions(Typescript), Firestore and Hosting"
@@ -145,9 +152,5 @@ export const content = {
             title: "TriggerT",
             description: "Little trigger that allows to take pictures when some particular events happens (thunderbolt, animals passing by, sudden noises, etc).\nBuilt on Arduino"
         },
-        {
-            title: "Home automation",
-            description: "Automatic sunblinds movement depending on particular weather conditions such as wind, rain, direct sun, etc. The core is an Arduino which can be controlled through Android app."
-        }
     ]
 }
