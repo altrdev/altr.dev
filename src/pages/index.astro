@@ -44,7 +44,7 @@ const jsonLd = {
           {profile.links.map((l) => (
             <li><a href={l.href} target="_blank" rel="noopener" aria-label={l.label} title={l.label}><Icon path={l.path} size={20} /></a></li>
           ))}
-          <li><a class="btn" href={resumeUrl} download><Icon path={mdiDownload} size={16} />{content.labels.download}</a></li>
+          <li><a class="btn" href={resumeUrl} target="_blank" rel="noopener"><Icon path={mdiDownload} size={16} />{content.labels.download}</a></li>
         </ul>
       </div>
     </header>
