@@ -44,9 +44,14 @@ export const services = [
         tags: ["Terraform", "CloudFormation", "CDK", "AWS", "Azure", "Docker"]
     },
     {
+        title: "Home Assistant & home automation",
+        description: "Custom smart home projects built around Home Assistant: integrations, custom panels and dashboards, Zigbee devices and automations tailored to how you actually live.",
+        tags: ["Home Assistant", "Zigbee", "Custom panels", "Automations"]
+    },
+    {
         title: "IoT & 3D printing",
-        description: "From Arduino prototypes to home automation: sensors, triggers, remote control apps and custom 3D-printed parts to bring them into the real world.",
-        tags: ["Arduino", "Home automation", "3D printing"]
+        description: "From Arduino and ESP32 prototypes to finished devices: sensors, triggers, remote control apps and custom 3D-printed parts to bring them into the real world.",
+        tags: ["Arduino", "ESP32", "3D printing"]
     }
 ];
 

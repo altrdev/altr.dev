@@ -74,6 +74,7 @@ section > p { max-width: 62ch; }
 /* services */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 .service { display: flex; flex-direction: column; gap: 8px; padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.service:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .service p { font-size: 0.95rem; color: var(--fg); }
 .service .chips { margin-top: auto; padding-top: 6px; }
 h3 { font-size: 1.05rem; line-height: 1.4; font-weight: 700; }
