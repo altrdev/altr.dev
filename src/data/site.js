@@ -134,8 +134,6 @@ export const content = {
         {
             title: "Basecamp-UI",
             link: "https://basecamp-ui.altr.dev",
-            soon: true,
-            badge: "Coming soon",
             description: "A custom UI for Home Assistant, built as a custom panel instead of Lovelace."
         },
         {
