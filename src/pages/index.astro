@@ -17,12 +17,6 @@ const resumeUrl =
   'https://api.microlink.io/?url=' + encodeURIComponent(`${site.url}/pdf`) +
   '&pdf=true&embed=pdf.url&scale=1&margin=0.4cm&format=A4';
 
-const skillGroups = [
-  { label: 'Proficient', level: 3, items: content.skills.proficient },
-  { label: 'Comfortable', level: 2, items: content.skills.comfortable },
-  { label: 'Familiar', level: 1, items: content.skills.familiar },
-].map((g) => ({ ...g, items: g.items.split(',').map((s) => s.trim()) }));
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -74,20 +68,6 @@ const jsonLd = {
       <section aria-labelledby="about">
         <h2 id="about"><span aria-hidden="true">#</span> {titles.about}</h2>
         {profile.about.map((p) => <p>{p}</p>)}
-      </section>
-
-      <section aria-labelledby="skills">
-        <h2 id="skills"><span aria-hidden="true">#</span> {titles.skills}</h2>
-        <dl class="skills">
-          {skillGroups.map((g) => (
-            <>
-              <dt><span class="level" aria-hidden="true">{'●'.repeat(g.level)}{'○'.repeat(3 - g.level)}</span> {g.label}</dt>
-              <dd>
-                <ul class="chips">{g.items.map((s) => <li>{s}</li>)}</ul>
-              </dd>
-            </>
-          ))}
-        </dl>
       </section>
 
       <section aria-labelledby="projects">
