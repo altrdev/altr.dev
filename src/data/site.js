@@ -67,7 +67,7 @@ export const titles = {
 
 export const content = {
     labels: {
-        download: "Download resume"
+        download: "View resume"
     },
     skills: {
         proficient: "Node.js, Java, Kotlin, Springboot, Next.js, Serverless, AWS, Terraform, CloudFormation, MongoDB, DynamoDB, Docker",
