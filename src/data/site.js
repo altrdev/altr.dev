@@ -124,7 +124,7 @@ export const content = {
             title: "Brezza",
             link: "https://brezza.altr.dev/",
             badge: "New",
-            description: "Battery-powered Zigbee vibration sensor that tells your smart home when the wind is shaking the awning. Works with Home Assistant.\nBuilt on ESP32-H2 and a LIS2DW12 accelerometer, with a custom PCB and a 3D-printed enclosure. Firmware in Arduino C++."
+            description: "Battery-powered Zigbee sensor that tells Home Assistant when the wind is shaking your awning.\nESP32-H2, custom PCB, 3D-printed enclosure."
         },
         {
             title: "Thook",
