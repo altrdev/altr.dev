@@ -131,10 +131,6 @@ export const content = {
             description: "Simple webapp for checking Ed25519 elliptic curve signing algorithm. \nLanguage used: Typescript on SvelteJs Framework"
         },
         {
-            title: "Amazon Alexa",
-            description:"Home assistant skills development.\nLanguage used: NodeJs"
-        },
-        {
             title: "3D Printing",
             link: "https://makerworld.com/it/@semuda/upload",
             description: "A few of my 3D printing projects are published on MakerWorld."
