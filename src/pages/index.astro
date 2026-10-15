@@ -8,10 +8,7 @@ import avatar from '../assets/profile.jpg';
 import { site, profile, services, titles, content } from '../data/site.js';
 import '../styles/global.css';
 
-const birth = new Date(profile.birthDate);
-const now = new Date();
-let age = now.getFullYear() - birth.getFullYear();
-if (now < new Date(now.getFullYear(), birth.getMonth(), birth.getDate())) age -= 1;
+const year = new Date().getFullYear();
 
 const resumeUrl = '/alessandro-travi-resume.pdf';
 
@@ -37,7 +34,7 @@ const jsonLd = {
         <p class="role"><span class="prompt" aria-hidden="true">~$</span> {profile.role}<span class="cursor" aria-hidden="true"></span></p>
         <p class="tagline">{profile.tagline}</p>
         <ul class="meta">
-          <li><Icon path={mdiMapMarkerOutline} size={16} />{profile.location} · {age}y</li>
+          <li><Icon path={mdiMapMarkerOutline} size={16} />{profile.location}</li>
           <li><Icon path={mdiEmailOutline} size={16} /><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
         </ul>
         <ul class="links">
@@ -94,7 +91,7 @@ const jsonLd = {
 
     <footer>
       <a class="top" href="#top" aria-label="Back to top"><Icon path={mdiChevronUp} size={20} /></a>
-      <p>© {now.getFullYear()} {profile.name} · <a href="https://github.com/altrdev/altr.dev" target="_blank" rel="noopener">view source</a></p>
+      <p>© {year} {profile.name} · <a href="https://github.com/altrdev/altr.dev" target="_blank" rel="noopener">view source</a></p>
     </footer>
   </div>
 </Base>
