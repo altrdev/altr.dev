@@ -135,15 +135,6 @@ export const content = {
             description:"Home assistant skills development.\nLanguage used: NodeJs"
         },
         {
-            title: "Ho l’utility",
-            link: "https://play.google.com/store/apps/details?id=com.filobot.houtility&hl=it",
-            description: "Android app that allows Ho. Mobile users to have a widget on their homescreens. \nLanguage used: Kotlin. Unique users: 8.000"
-        },
-        {
-            title: "Contraceptive Ring (inactive)",
-            description: "Android app to track contraceptive ring usage.\nLanguage used: Java. Unique users: 49.000"
-        },
-        {
             title: "3D Printing",
             link: "https://www.printables.com/it/@altrdev",
             description: "3d print DIY assembling on Josef Prusa model \nFew projects to be found on Printables (altrdev)"
