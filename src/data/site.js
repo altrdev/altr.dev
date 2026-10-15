@@ -1,42 +1,38 @@
 import { siLinkedin, siInstagram, siGithub, siX } from 'simple-icons';
 
-let id = 0;
-function createData(label, value) {
-  id += 1;
-  return { id, label, value };
-}
+export const site = {
+    url: "https://altr.dev",
+    title: "Alessandro Travi – Software Engineer | altr.dev",
+    description: "Official site of Alessandro Travi aka altrdev. I’m a software engineer always willing to put myself out there and push myself beyond my limits.",
+    handle: "altrdev"
+};
 
-export const info = {
-    title: "altr.dev - Alessandro Travi Software Developer",
-    footer: " - altrdev"
-}
+export const profile = {
+    name: "Alessandro Travi",
+    role: "Crazy Software Engineer",
+    birthDate: "1990-04-09",
+    location: "Como Lake, Italy",
+    email: "info@altr.dev",
+    about: [
+        "I’m a software engineer who is always eager to step outside my comfort zone and push myself beyond my limits.",
+        "After graduating from high school, while working as a postman, I began challenging myself with personal side projects and freelance consulting.",
+        "I’m not entirely sure what it means to be a 'self-starter,' but people tend to call me that."
+    ],
+    links: [
+        { label: "GitHub", href: "https://github.com/altrdev/", path: siGithub.path },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/alessandrotravi/en", path: siLinkedin.path },
+        { label: "Instagram", href: "https://www.instagram.com/alessandro.travi/", path: siInstagram.path },
+        { label: "X", href: "https://twitter.com/altrdev", path: siX.path }
+    ]
+};
 
 export const titles = {
-    aboutMe: "About Me",
-    contacts: "Contacts",
-    experience: "Professional Experience",
-    education: "Education",
+    about: "About",
     skills: "Skills",
-    projects: "Side Projects"
-}
-
-export const floatingIntro = {
-    name: "Alessandro Travi",
-    workTitle: "Crazy Software Engineer",
-    description: "I’m a software engineer who is always eager to step outside my comfort zone and push myself beyond my limits.\nAfter graduating from high school, while working as a postman, I began challenging myself with personal side projects and freelance consulting.\nI’m not entirely sure what it means to be a 'self-starter,' but people tend to call me that.",
-    icons: [
-        createData(siLinkedin.path, "https://www.linkedin.com/in/alessandrotravi/en"),
-        createData(siGithub.path, "https://github.com/altrdev/"),
-        createData(siInstagram.path, "https://www.instagram.com/alessandro.travi/"),
-        createData(siX.path, "https://twitter.com/altrdev")
-    ],
-    tableRows: [
-        createData("BirthDate", "09/04/1990"),
-        createData("Location", "Como Lake, Italy"),
-        createData("Email", "info@altr.dev"),
-        createData("Website", "https://altr.dev")
-    ]
-}
+    experience: "Experience",
+    education: "Education",
+    projects: "Side projects"
+};
 
 export const content = {
     labels: {
