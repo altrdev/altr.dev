@@ -1,0 +1,45 @@
+/* Print-first resume. Always light, A4-friendly, no decoration that costs ink. */
+html[data-print] body { background: #fff; color: #111; font-size: 13px; line-height: 1.5; }
+html[data-print] a { color: #111; text-decoration: none; }
+
+.sheet { max-width: 794px; margin: 0 auto; padding: 32px 36px; }
+.sheet header { padding-bottom: 14px; border-bottom: 3px solid var(--accent); margin-bottom: 20px; }
+.sheet h1 { font-size: 30px; }
+.sheet .role { margin-top: 2px; font: 600 13px var(--mono); color: #555; }
+
+.cols { display: grid; grid-template-columns: 31% 1fr; gap: 28px; align-items: start; }
+.sheet section { margin-top: 0; margin-bottom: 20px; }
+.sheet h2 { margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid #ddd; font: 700 11px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
+.sheet h2 span { display: none; }
+.sheet aside p { font-size: 12px; color: #333; }
+.sheet aside p + p { margin-top: 6px; }
+.sheet aside h3 { margin-top: 8px; font: 700 11px var(--mono); }
+
+.contacts { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 0; font-size: 12px; }
+.contacts dt { font-weight: 700; }
+.contacts dd { margin: 0; overflow-wrap: anywhere; }
+
+.sheet article { margin-bottom: 14px; break-inside: avoid; }
+.sheet article h3 { font-size: 14px; }
+.sheet article h3 span { font-weight: 500; color: #555; }
+.sheet article time { display: block; font: 11px var(--mono); color: #666; }
+.sheet .prose { margin-top: 4px; font-size: 12px; color: #222; }
+
+@media (max-width: 640px) {
+  .sheet { padding: 20px 16px; }
+  .cols { grid-template-columns: 1fr; }
+}
+
+@page { size: A4; margin: 12mm; }
+
+@media print {
+  html[data-print] body { font-size: 11px; line-height: 1.42; }
+  .sheet { max-width: none; padding: 0; }
+  .sheet header { padding-bottom: 10px; margin-bottom: 14px; }
+  .sheet h1 { font-size: 26px; }
+  .sheet section { margin-bottom: 14px; }
+  .sheet article { margin-bottom: 10px; }
+  .sheet article h3 { font-size: 13px; }
+  .sheet .prose, .sheet aside p { font-size: 11px; }
+  .sheet h2 { break-after: avoid; }
+}

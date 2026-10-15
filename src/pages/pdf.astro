@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import Description from '../components/Description.astro';
+import { site, profile, titles, content } from '../data/site.js';
+import '../styles/global.css';
+import '../styles/pdf.css';
+
+const birth = new Date(profile.birthDate);
+const now = new Date();
+let age = now.getFullYear() - birth.getFullYear();
+if (now < new Date(now.getFullYear(), birth.getMonth(), birth.getDate())) age -= 1;
+
+const contacts = [
+  ['Age', String(age)],
+  ['Location', profile.location],
+  ['Email', profile.email, `mailto:${profile.email}`],
+  ['Web', site.url.replace('https://', ''), site.url],
+  ...profile.links.slice(0, 2).map((l) => [l.label, l.href.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, ''), l.href]),
+];
+const groups = [
+  ['Proficient', content.skills.proficient],
+  ['Comfortable', content.skills.comfortable],
+  ['Familiar', content.skills.familiar],
+];
+---
+<Base title={`${profile.name} – Resume`} path="/pdf" print>
+  <div class="sheet">
+    <header>
+      <h1>{profile.name}</h1>
+      <p class="role">{profile.role}</p>
+    </header>
+    <div class="cols">
+      <aside>
+        <section>
+          <h2>{titles.about}</h2>
+          {profile.about.map((p) => <p>{p}</p>)}
+        </section>
+        <section>
+          <h2>Contacts</h2>
+          <dl class="contacts">
+            {contacts.map(([label, value, href]) => (
+              <>
+                <dt>{label}</dt>
+                <dd>{href ? <a href={href}>{value}</a> : value}</dd>
+              </>
+            ))}
+          </dl>
+        </section>
+        <section>
+          <h2>{titles.skills}</h2>
+          {groups.map(([label, items]) => (
+            <>
+              <h3>{label}</h3>
+              <p>{items}</p>
+            </>
+          ))}
+        </section>
+      </aside>
+      <main>
+        <section>
+          <h2>{titles.experience}</h2>
+          {content.workExperience.map((job) => (
+            <article>
+              <h3>{job.title} <span>@ {job.company}</span></h3>
+              <time>{job.date}</time>
+              <div class="prose"><Description text={job.description} /></div>
+            </article>
+          ))}
+        </section>
+        <section>
+          <h2>{titles.education}</h2>
+          {content.educations.map((ed) => (
+            <article>
+              <h3>{ed.title}</h3>
+              <time>{ed.date} · {ed.company}</time>
+            </article>
+          ))}
+        </section>
+      </main>
+    </div>
+  </div>
+</Base>

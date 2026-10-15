@@ -1,0 +1,26 @@
+---
+// Renders plain text where lines starting with "- " become list items.
+interface Props {
+  text?: string;
+}
+const { text = "" } = Astro.props;
+
+type Block = { type: "p"; text: string } | { type: "ul"; items: string[] };
+const blocks: Block[] = [];
+for (const line of text.split("\n").map((l) => l.trim()).filter(Boolean)) {
+  if (line.startsWith("- ")) {
+    const last = blocks[blocks.length - 1];
+    if (last && last.type === "ul") last.items.push(line.slice(2));
+    else blocks.push({ type: "ul", items: [line.slice(2)] });
+  } else {
+    blocks.push({ type: "p", text: line });
+  }
+}
+---
+{blocks.map((b) =>
+  b.type === "ul" ? (
+    <ul>{b.items.map((i) => <li>{i}</li>)}</ul>
+  ) : (
+    <p>{b.text}</p>
+  )
+)}
