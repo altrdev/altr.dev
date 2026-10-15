@@ -34,9 +34,9 @@ export const services = [
         tags: ["Node.js", "Java", "Kotlin", "Spring Boot", "Serverless", "MongoDB", "DynamoDB"]
     },
     {
-        title: "AI consulting",
-        description: "Working out where AI actually fits in your product or workflow: use cases, integration with existing backends, and pragmatic prototypes before any big commitment.",
-        tags: ["Use cases", "Integration", "Prototypes"]
+        title: "AI-assisted development",
+        description: "Building software faster with AI coding assistants without losing control of the result: spec-driven workflows with OpenSpec, requirements agreed before code, and small reviewable changes. Plus consulting on where AI really fits in your product or team.",
+        tags: ["OpenSpec", "Spec-driven", "AI coding", "Consulting"]
     },
     {
         title: "Infrastructure as Code",
