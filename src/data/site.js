@@ -31,7 +31,7 @@ export const services = [
     {
         title: "Backend & APIs",
         description: "Reliable backend systems and APIs built with Node.js or Java/Kotlin and Spring Boot. Serverless or containerized, on AWS and Azure, with SQL and NoSQL data stores.",
-        tags: ["Node.js", "Java", "Kotlin", "Serverless"]
+        tags: ["Node.js", "Java", "Kotlin", "Spring Boot", "Serverless", "MongoDB", "DynamoDB"]
     },
     {
         title: "AI consulting",
@@ -41,7 +41,7 @@ export const services = [
     {
         title: "Infrastructure as Code",
         description: "Repeatable cloud infrastructure you can version, review and rebuild. Terraform, CloudFormation and CDK, with CI/CD and container setups around them.",
-        tags: ["Terraform", "CloudFormation", "CDK", "AWS"]
+        tags: ["Terraform", "CloudFormation", "CDK", "AWS", "Azure", "Docker"]
     },
     {
         title: "IoT & 3D printing",
