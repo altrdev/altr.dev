@@ -136,8 +136,8 @@ export const content = {
         },
         {
             title: "3D Printing",
-            link: "https://www.printables.com/it/@altrdev",
-            description: "3d print DIY assembling on Josef Prusa model \nFew projects to be found on Printables (altrdev)"
+            link: "https://makerworld.com/it/@semuda/upload",
+            description: "3d print DIY assembling on Josef Prusa model \nFew projects to be found on MakerWorld (semuda)"
         },
         {
             title: "TriggerT",
