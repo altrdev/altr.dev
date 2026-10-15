@@ -137,7 +137,7 @@ export const content = {
         {
             title: "3D Printing",
             link: "https://makerworld.com/it/@semuda/upload",
-            description: "3d print DIY assembling on Josef Prusa model \nFew projects to be found on MakerWorld (semuda)"
+            description: "A few of my 3D printing projects are published on MakerWorld."
         },
         {
             title: "TriggerT",
