@@ -1,0 +1,130 @@
+---
+import { Image } from 'astro:assets';
+import { mdiEmailOutline, mdiMapMarkerOutline, mdiDownload, mdiArrowTopRight, mdiChevronUp } from '@mdi/js';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Description from '../components/Description.astro';
+import avatar from '../assets/profile.jpg';
+import { site, profile, titles, content } from '../data/site.js';
+import '../styles/global.css';
+
+const birth = new Date(profile.birthDate);
+const now = new Date();
+let age = now.getFullYear() - birth.getFullYear();
+if (now < new Date(now.getFullYear(), birth.getMonth(), birth.getDate())) age -= 1;
+
+const resumeUrl =
+  'https://api.microlink.io/?url=' + encodeURIComponent(`${site.url}/pdf`) +
+  '&pdf=true&embed=pdf.url&scale=1&margin=0.4cm&format=A4';
+
+const skillGroups = [
+  { label: 'Proficient', level: 3, items: content.skills.proficient },
+  { label: 'Comfortable', level: 2, items: content.skills.comfortable },
+  { label: 'Familiar', level: 1, items: content.skills.familiar },
+].map((g) => ({ ...g, items: g.items.split(',').map((s) => s.trim()) }));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: 'Software Engineer',
+  url: site.url,
+  email: profile.email,
+  address: { '@type': 'PostalAddress', addressLocality: 'Como', addressCountry: 'IT' },
+  sameAs: profile.links.map((l) => l.href),
+};
+---
+<Base>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <div class="page">
+    <header class="hero">
+      <Image class="avatar" src={avatar} alt={profile.name} width={112} height={112} densities={[1, 2]} loading="eager" />
+      <div class="hero-text">
+        <h1>{profile.name}</h1>
+        <p class="role"><span class="prompt" aria-hidden="true">~$</span> {profile.role}<span class="cursor" aria-hidden="true"></span></p>
+        <ul class="meta">
+          <li><Icon path={mdiMapMarkerOutline} size={16} />{profile.location} · {age}y</li>
+          <li><Icon path={mdiEmailOutline} size={16} /><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
+        </ul>
+        <ul class="links">
+          {profile.links.map((l) => (
+            <li><a href={l.href} target="_blank" rel="noopener" aria-label={l.label} title={l.label}><Icon path={l.path} size={20} /></a></li>
+          ))}
+          <li><a class="btn" href={resumeUrl} target="_blank" rel="noopener"><Icon path={mdiDownload} size={16} />{content.labels.download}</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="about">
+        <h2 id="about"><span aria-hidden="true">#</span> {titles.about}</h2>
+        {profile.about.map((p) => <p>{p}</p>)}
+      </section>
+
+      <section aria-labelledby="skills">
+        <h2 id="skills"><span aria-hidden="true">#</span> {titles.skills}</h2>
+        <dl class="skills">
+          {skillGroups.map((g) => (
+            <>
+              <dt><span class="level" aria-hidden="true">{'●'.repeat(g.level)}{'○'.repeat(3 - g.level)}</span> {g.label}</dt>
+              <dd>
+                <ul class="chips">{g.items.map((s) => <li>{s}</li>)}</ul>
+              </dd>
+            </>
+          ))}
+        </dl>
+      </section>
+
+      <section aria-labelledby="experience">
+        <h2 id="experience"><span aria-hidden="true">#</span> {titles.experience}</h2>
+        <ol class="timeline">
+          {content.workExperience.map((job) => (
+            <li>
+              <div class="tl-head">
+                <h3>{job.title} <span class="at">@ {job.company}</span></h3>
+                <time>{job.date}</time>
+              </div>
+              <div class="prose"><Description text={job.description} /></div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education"><span aria-hidden="true">#</span> {titles.education}</h2>
+        <ol class="timeline">
+          {content.educations.map((ed) => (
+            <li>
+              <div class="tl-head">
+                <h3>{ed.title}</h3>
+                <time>{ed.date}</time>
+              </div>
+              <p class="muted">{ed.company}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="projects">
+        <h2 id="projects"><span aria-hidden="true">#</span> {titles.projects}</h2>
+        <ul class="projects">
+          {content.personalProjects.map((p) => (
+            <li class="project">
+              <h3>
+                {p.link ? (
+                  <a href={p.link} target="_blank" rel="noopener">{p.title}<Icon path={mdiArrowTopRight} size={14} /></a>
+                ) : p.title}
+              </h3>
+              <div class="prose"><Description text={p.description} /></div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <a class="top" href="#top" aria-label="Back to top"><Icon path={mdiChevronUp} size={20} /></a>
+      <p>© {now.getFullYear()} {profile.name} · <a href="https://github.com/altrdev/altr.dev" target="_blank" rel="noopener">view source</a></p>
+    </footer>
+  </div>
+</Base>

@@ -1,0 +1,55 @@
+---
+import SpeedInsights from '@vercel/speed-insights/astro';
+import { site } from '../data/site.js';
+
+interface Props {
+  title?: string;
+  description?: string;
+  path?: string;
+  print?: boolean;
+}
+const { title = site.title, description = site.description, path = '/', print = false } = Astro.props;
+const canonical = new URL(path, site.url).href;
+const gaId = import.meta.env.PUBLIC_MEASUREMENT_ID ?? import.meta.env.NEXT_PUBLIC_MEASUREMENT_ID;
+---
+<!doctype html>
+<html lang="en" data-print={print ? '' : undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Alessandro Travi" />
+    <meta name="robots" content={print ? 'noindex, follow' : 'index, follow'} />
+    <meta name="color-scheme" content={print ? 'light' : 'light dark'} />
+    <meta name="theme-color" content="#0EB57D" />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/icons/touch-icon-ipad-retina.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="yandex-verification" content="c5acf8bbe12bc1d5" />
+    <meta name="msvalidate.01" content="D5D6C71B573ADD7743E2BFEF1E56E6D9" />
+
+    {gaId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
+    {gaId && <script is:inline define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>}
+  </head>
+  <body>
+    <slot />
+    <SpeedInsights />
+  </body>
+</html>

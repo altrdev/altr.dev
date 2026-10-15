@@ -1,26 +1,24 @@
-# Personal site (altr.dev) 
-<hr>
+# altr.dev
 
-![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=altr-dev&style=flat-square)
+Personal site of Alessandro Travi, built with [Astro](https://astro.build) as a fully static site (no client-side framework) and deployed on Vercel.
 
+- `/` – single-page resume, light/dark theme follows the system
+- `/pdf` – print-optimized resume (used by the "Download resume" button through Microlink)
 
-## Getting Started
-
-First, run the development server:
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # static output in dist/
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content
 
-## Learn More
+All content lives in `src/data/site.js`. Edit it and the pages update.
 
-To learn more about Next.js, take a look at the following resources:
+## Config
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `PUBLIC_MEASUREMENT_ID` (or the legacy `NEXT_PUBLIC_MEASUREMENT_ID`) – Google Analytics ID, optional.
+- Vercel framework preset is set to Astro through `vercel.json`.
