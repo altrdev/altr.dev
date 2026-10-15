@@ -10,6 +10,7 @@ export const site = {
 export const profile = {
     name: "Alessandro Travi",
     role: "Crazy Software Engineer",
+    tagline: "Backend, cloud infrastructure and AI consulting, plus IoT and 3D printing projects.",
     birthDate: "1990-04-09",
     location: "Como Lake, Italy",
     email: "info@altr.dev",
@@ -26,8 +27,33 @@ export const profile = {
     ]
 };
 
+export const services = [
+    {
+        title: "Backend & APIs",
+        description: "Reliable backend systems and APIs built with Node.js or Java/Kotlin and Spring Boot. Serverless or containerized, on AWS and Azure, with SQL and NoSQL data stores.",
+        tags: ["Node.js", "Java", "Kotlin", "Serverless"]
+    },
+    {
+        title: "AI consulting",
+        description: "Working out where AI actually fits in your product or workflow: use cases, integration with existing backends, and pragmatic prototypes before any big commitment.",
+        tags: ["Use cases", "Integration", "Prototypes"]
+    },
+    {
+        title: "Infrastructure as Code",
+        description: "Repeatable cloud infrastructure you can version, review and rebuild. Terraform, CloudFormation and CDK, with CI/CD and container setups around them.",
+        tags: ["Terraform", "CloudFormation", "CDK", "AWS"]
+    },
+    {
+        title: "IoT & 3D printing",
+        description: "From Arduino prototypes to home automation: sensors, triggers, remote control apps and custom 3D-printed parts to bring them into the real world.",
+        tags: ["Arduino", "Home automation", "3D printing"]
+    }
+];
+
 export const titles = {
+    services: "What I do",
     about: "About",
+    contact: "Get in touch",
     skills: "Skills",
     experience: "Experience",
     education: "Education",

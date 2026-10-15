@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Description from '../components/Description.astro';
 import avatar from '../assets/profile.jpg';
-import { site, profile, titles, content } from '../data/site.js';
+import { site, profile, services, titles, content } from '../data/site.js';
 import '../styles/global.css';
 
 const birth = new Date(profile.birthDate);
@@ -28,6 +28,7 @@ const jsonLd = {
   '@type': 'Person',
   name: profile.name,
   jobTitle: 'Software Engineer',
+  knowsAbout: ['Backend development', 'Cloud infrastructure', 'Infrastructure as Code', 'AI consulting', 'IoT', '3D printing'],
   url: site.url,
   email: profile.email,
   address: { '@type': 'PostalAddress', addressLocality: 'Como', addressCountry: 'IT' },
@@ -42,6 +43,7 @@ const jsonLd = {
       <div class="hero-text">
         <h1>{profile.name}</h1>
         <p class="role"><span class="prompt" aria-hidden="true">~$</span> {profile.role}<span class="cursor" aria-hidden="true"></span></p>
+        <p class="tagline">{profile.tagline}</p>
         <ul class="meta">
           <li><Icon path={mdiMapMarkerOutline} size={16} />{profile.location} · {age}y</li>
           <li><Icon path={mdiEmailOutline} size={16} /><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
@@ -56,6 +58,19 @@ const jsonLd = {
     </header>
 
     <main>
+      <section aria-labelledby="services">
+        <h2 id="services"><span aria-hidden="true">#</span> {titles.services}</h2>
+        <ul class="services">
+          {services.map((svc) => (
+            <li class="service">
+              <h3>{svc.title}</h3>
+              <p>{svc.description}</p>
+              <ul class="chips">{svc.tags.map((t) => <li>{t}</li>)}</ul>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section aria-labelledby="about">
         <h2 id="about"><span aria-hidden="true">#</span> {titles.about}</h2>
         {profile.about.map((p) => <p>{p}</p>)}
@@ -75,36 +90,6 @@ const jsonLd = {
         </dl>
       </section>
 
-      <section aria-labelledby="experience">
-        <h2 id="experience"><span aria-hidden="true">#</span> {titles.experience}</h2>
-        <ol class="timeline">
-          {content.workExperience.map((job) => (
-            <li>
-              <div class="tl-head">
-                <h3>{job.title} <span class="at">@ {job.company}</span></h3>
-                <time>{job.date}</time>
-              </div>
-              <div class="prose"><Description text={job.description} /></div>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section aria-labelledby="education">
-        <h2 id="education"><span aria-hidden="true">#</span> {titles.education}</h2>
-        <ol class="timeline">
-          {content.educations.map((ed) => (
-            <li>
-              <div class="tl-head">
-                <h3>{ed.title}</h3>
-                <time>{ed.date}</time>
-              </div>
-              <p class="muted">{ed.company}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
       <section aria-labelledby="projects">
         <h2 id="projects"><span aria-hidden="true">#</span> {titles.projects}</h2>
         <ul class="projects">
@@ -119,6 +104,12 @@ const jsonLd = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section aria-labelledby="contact" class="contact">
+        <h2 id="contact"><span aria-hidden="true">#</span> {titles.contact}</h2>
+        <p>Have a project in mind, or just want to talk it through? Drop me a line.</p>
+        <p><a class="btn" href={`mailto:${profile.email}`}><Icon path={mdiEmailOutline} size={16} />{profile.email}</a></p>
       </section>
     </main>
 
