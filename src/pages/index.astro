@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { mdiEmailOutline, mdiMapMarkerOutline, mdiDownload, mdiArrowTopRight, mdiChevronUp } from '@mdi/js';
+import { mdiEmailOutline, mdiMapMarkerOutline, mdiFileDocumentOutline, mdiArrowTopRight, mdiChevronUp } from '@mdi/js';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Description from '../components/Description.astro';
@@ -44,7 +44,7 @@ const jsonLd = {
           {profile.links.map((l) => (
             <li><a href={l.href} target="_blank" rel="noopener" aria-label={l.label} title={l.label}><Icon path={l.path} size={20} /></a></li>
           ))}
-          <li><a class="btn" href={resumeUrl} target="_blank" rel="noopener"><Icon path={mdiDownload} size={16} />{content.labels.download}</a></li>
+          <li><a class="btn" href={resumeUrl} target="_blank" rel="noopener"><Icon path={mdiFileDocumentOutline} size={16} />{content.labels.download}</a></li>
         </ul>
       </div>
     </header>
