@@ -76,21 +76,19 @@ section > p { max-width: 62ch; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips li { padding: 2px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); font: 0.8rem/1.7 var(--mono); }
 
-/* timeline */
-.timeline { position: relative; margin-left: 5px; padding-left: 24px; border-left: 2px solid var(--line); }
-.timeline > li { position: relative; padding-bottom: 28px; }
-.timeline > li:last-child { padding-bottom: 0; }
-.timeline > li::before { content: ""; position: absolute; left: -31px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); box-shadow: 0 0 0 2px var(--accent); }
-.tl-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; }
+/* services */
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.service { display: flex; flex-direction: column; gap: 8px; padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.service p { font-size: 0.95rem; color: var(--fg); }
+.service .chips { margin-top: auto; padding-top: 6px; }
 h3 { font-size: 1.05rem; line-height: 1.4; font-weight: 700; }
-.at { font-weight: 500; color: var(--muted); }
-time { font: 0.8rem var(--mono); color: var(--muted); white-space: nowrap; }
 .prose { margin-top: 6px; color: var(--fg); }
 .prose p + p, .prose p + ul, .prose ul + p { margin-top: 6px; }
-.prose ul { list-style: none; }
 .prose li { position: relative; padding-left: 16px; }
 .prose li::before { content: "–"; position: absolute; left: 0; color: var(--accent-ink); }
-.prose, .project .prose { font-size: 0.95rem; }
+.prose { font-size: 0.95rem; }
+.tagline { margin-top: 12px; max-width: 52ch; color: var(--fg); }
+.contact p + p { margin-top: 14px; }
 
 /* projects */
 .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
@@ -108,7 +106,6 @@ footer p { margin-top: 10px; }
 @media (max-width: 560px) {
   .page { padding-top: 36px; }
   .hero { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .timeline > li::before { left: -31px; }
 }
 
 @media print {
