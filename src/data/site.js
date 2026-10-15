@@ -152,10 +152,6 @@ export const content = {
             title: "3D Printing",
             link: "https://makerworld.com/it/@semuda/upload",
             description: "A few of my 3D printing projects are published on MakerWorld."
-        },
-        {
-            title: "TriggerT",
-            description: "Little trigger that allows to take pictures when some particular events happens (thunderbolt, animals passing by, sudden noises, etc).\nBuilt on Arduino"
-        },
+        }
     ]
 }
