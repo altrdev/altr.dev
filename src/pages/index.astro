@@ -79,6 +79,7 @@ const jsonLd = {
                 {p.link ? (
                   <a href={p.link} target="_blank" rel="noopener">{p.title}<Icon path={mdiArrowTopRight} size={14} /></a>
                 ) : p.title}
+                {p.badge && <span class="badge">{p.badge}</span>}
               </h3>
               <div class="prose"><Description text={p.description} /></div>
             </li>

@@ -121,6 +121,12 @@ export const content = {
     ],
     personalProjects: [
         {
+            title: "Brezza",
+            link: "https://brezza.altr.dev/",
+            badge: "New",
+            description: "Battery-powered Zigbee vibration sensor that tells your smart home when the wind is shaking the awning. Works with Home Assistant.\nBuilt on ESP32-H2 and a LIS2DW12 accelerometer, with a custom PCB and a 3D-printed enclosure. Firmware in Arduino C++."
+        },
+        {
             title: "Thook",
             link: "https://thook.altr.dev",
             description: "Simply receive notifications in Telegram. \nEntire Serverless project with Firebase Functions(Typescript), Firestore and Hosting"
