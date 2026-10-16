@@ -143,7 +143,7 @@ export const content = {
         },
         {
             title: "Ed25519",
-            link: "https://github.com/altrdev/ed25519-verify",
+            link: "https://ed25519.altr.dev/",
             description: "Simple webapp for checking Ed25519 elliptic curve signing algorithm. \nLanguage used: Typescript on SvelteJs Framework"
         },
         {
