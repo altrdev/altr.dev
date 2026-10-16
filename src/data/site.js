@@ -144,7 +144,7 @@ export const content = {
         {
             title: "Ed25519",
             link: "https://ed25519.altr.dev/",
-            description: "Simple webapp for checking Ed25519 elliptic curve signing algorithm. \nLanguage used: Typescript on SvelteJs Framework"
+            description: "Verify and create Ed25519 signatures right in the browser. Everything runs client-side, nothing is uploaded.\nTypeScript, Preact and Vite."
         },
         {
             title: "3D Printing",
