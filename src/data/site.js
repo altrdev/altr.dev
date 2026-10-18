@@ -142,6 +142,11 @@ export const content = {
             description: "Simply receive notifications in Telegram. \nEntire Serverless project with Firebase Functions(Typescript), Firestore and Hosting"
         },
         {
+            title: "stress-node",
+            link: "https://github.com/altrdev/stress-node",
+            description: "Node.js server that stresses CPU, memory, disk and latency on demand.\nFor testing autoscaling, resource limits and probes in containers. Docker image included."
+        },
+        {
             title: "Ed25519",
             link: "https://ed25519.altr.dev/",
             description: "Verify and create Ed25519 signatures right in the browser. Everything runs client-side, nothing is uploaded.\nTypeScript, Preact and Vite."
