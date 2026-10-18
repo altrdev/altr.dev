@@ -142,9 +142,9 @@ export const content = {
             description: "Simply receive notifications in Telegram. \nEntire Serverless project with Firebase Functions(Typescript), Firestore and Hosting"
         },
         {
-            title: "stress-node",
-            link: "https://github.com/altrdev/stress-node",
-            description: "Node.js server that stresses CPU, memory, disk and latency on demand.\nFor testing autoscaling, resource limits and probes in containers. Docker image included."
+            title: "Torchio",
+            link: "https://github.com/altrdev/torchio",
+            description: "Break your containers on purpose: burn CPU, hold memory, fill disk and add latency on demand over HTTP.\nFor testing autoscaling, limits, OOM kills and probes. Docker image included."
         },
         {
             title: "Ed25519",
