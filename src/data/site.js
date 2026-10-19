@@ -143,7 +143,7 @@ export const content = {
         },
         {
             title: "Torchio",
-            link: "https://github.com/altrdev/torchio",
+            link: "https://torchio.altr.dev",
             description: "Break your containers on purpose: burn CPU, hold memory, fill disk and add latency on demand over HTTP.\nFor testing autoscaling, limits, OOM kills and probes. Docker image included."
         },
         {
