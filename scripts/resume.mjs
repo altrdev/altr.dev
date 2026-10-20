@@ -10,6 +10,7 @@ import { existsSync } from 'node:fs';
 import { copyFile, mkdir, readFile, stat } from 'node:fs/promises';
 import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { launchOptions } from './chrome.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -33,25 +34,6 @@ function serve() {
     }
   });
   return new Promise((ok) => server.listen(0, '127.0.0.1', () => ok(server)));
-}
-
-async function launchOptions() {
-  if (process.env.VERCEL) {
-    const { default: chromium } = await import('@sparticuz/chromium');
-    return { executablePath: await chromium.executablePath(), args: chromium.args, headless: 'shell' };
-  }
-  const candidates = [
-    process.env.CHROME_PATH,
-    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    '/Applications/Chromium.app/Contents/MacOS/Chromium',
-    '/usr/bin/google-chrome',
-    '/usr/bin/chromium',
-    '/usr/bin/chromium-browser',
-    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-  ].filter(Boolean);
-  const executablePath = candidates.find((p) => existsSync(p));
-  if (!executablePath) throw new Error('Chrome not found: set CHROME_PATH');
-  return { executablePath, args: ['--no-sandbox'], headless: true };
 }
 
 async function main() {
