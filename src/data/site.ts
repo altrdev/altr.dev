@@ -83,7 +83,8 @@ export const content = {
   labels: {
     download: "View resume",
     backToTop: "Back to top",
-    viewSource: "view source"
+    viewSource: "view source",
+    privacy: "privacy"
   },
   contactIntro: "Have a project in mind, or just want to talk it through? Drop me a line.",
   skills: {

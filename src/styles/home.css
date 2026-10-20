@@ -41,6 +41,12 @@ section > p { max-width: 62ch; }
 .project h3 a { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; }
 .project h3 a:hover { text-decoration: underline; }
 
+/* legal pages */
+.legal-head p:first-child { margin-bottom: 18px; font: 0.85rem var(--mono); }
+.legal section > ul { display: grid; gap: 10px; max-width: 62ch; }
+.legal section > ul li { position: relative; padding-left: 16px; }
+.legal section > ul li::before { content: "–"; position: absolute; left: 0; color: var(--accent-ink); }
+
 /* footer */
 footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font: 0.8rem var(--mono); }
 footer p { margin-top: 10px; }

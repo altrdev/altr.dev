@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, profile } from '../data/site';
+import '../styles/base.css';
+import '../styles/home.css';
+
+const updated = 'October 2026';
+---
+<Base title={`Privacy Policy – ${site.name}`} description={`Privacy policy of ${site.name}.`} path="/privacy">
+  <div class="page">
+    <header class="legal-head">
+      <p><a href="/">← {site.name}</a></p>
+      <h1>Privacy Policy</h1>
+      <p class="role">Last updated: {updated}</p>
+    </header>
+
+    <main class="legal">
+      <section>
+        <h2>Data controller</h2>
+        <p>{profile.name}, {profile.addressLocality}, Italy. Contact: <a href={`mailto:${profile.email}`}>{profile.email}</a>.</p>
+      </section>
+
+      <section>
+        <h2>What this site collects</h2>
+        <p>This is a personal website. It has no accounts, forms or comments, and it does not set any cookies.</p>
+        <ul>
+          <li><strong>Analytics and performance.</strong> The site uses Vercel Web Analytics and Vercel Speed Insights to count page views and measure loading speed. They do not use cookies and do not track you across sites or build a profile of you. They record anonymous data such as the page visited, referrer, country, browser, operating system and device type.</li>
+          <li><strong>Hosting logs.</strong> The site is hosted on Vercel, which processes technical data needed to serve it, such as your IP address and request details, in server logs.</li>
+          <li><strong>Email.</strong> If you write to me, I receive your email address and the content of your message. I use them only to reply, and keep them as long as needed for that conversation.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Legal basis</h2>
+        <p>Analytics and hosting logs are processed on the basis of my legitimate interest in running a secure site and understanding how it is used (art. 6(1)(f) GDPR). Emails are processed to answer your request (art. 6(1)(b) and (f) GDPR).</p>
+      </section>
+
+      <section>
+        <h2>Recipients and transfers</h2>
+        <p>Data is processed on my behalf by Vercel Inc., which may process data outside the European Economic Area under appropriate safeguards. See the <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel privacy policy</a>. I do not sell your data.</p>
+      </section>
+
+      <section>
+        <h2>External links</h2>
+        <p>The site links to other websites and services (GitHub, LinkedIn, Instagram, X and my projects). They have their own privacy policies and I am not responsible for them.</p>
+      </section>
+
+      <section>
+        <h2>Your rights</h2>
+        <p>You can ask for access to, correction or deletion of your data, restrict or object to its processing, and request portability, by writing to <a href={`mailto:${profile.email}`}>{profile.email}</a>. You can also lodge a complaint with your data protection authority; in Italy this is the <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© {new Date().getFullYear()} {profile.name}</p>
+    </footer>
+  </div>
+</Base>
