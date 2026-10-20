@@ -25,6 +25,10 @@ After changing the content, refresh the committed copy and commit it:
 npm run resume   # set CHROME_PATH if Chrome is not in a common location
 ```
 
+## Logo and social preview
+
+The favicon, touch icons and `public/images/og.png` are rendered by `scripts/brand.mjs` (`npm run brand`, needs local Chrome). Edit the script to change the design and commit the regenerated files.
+
 ## Content
 
 All content lives in `src/data/site.ts`. Edit it and the pages update.
