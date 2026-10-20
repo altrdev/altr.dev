@@ -18,8 +18,8 @@ const MONO = "ui-monospace, 'SF Mono', Menlo, Consolas, monospace";
 // "at" plus a cursor detached from the last letter. Square viewBox so it scales to any icon size.
 const logo = (rx) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="${rx}" fill="${GREEN}"/>
-  <text x="62" y="340" font-family="${MONO}" font-size="270" font-weight="700" fill="#fff" textLength="290" lengthAdjust="spacingAndGlyphs">at</text>
-  <rect x="392" y="146" width="58" height="204" fill="#fff"/>
+  <text x="66" y="336" font-family="${MONO}" font-size="232" font-weight="700" fill="#fff" textLength="250" lengthAdjust="spacingAndGlyphs">at</text>
+  <rect x="336" y="322" width="110" height="30" fill="#fff"/>
 </svg>`;
 
 const page = (body, w, h) => `<!doctype html><meta charset="utf-8"><style>html,body{margin:0;width:${w}px;height:${h}px;background:transparent;overflow:hidden}</style>${body}`;
