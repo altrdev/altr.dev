@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Description from '../components/Description.astro';
-import { site, profile, titles, content } from '../data/site.js';
-import '../styles/global.css';
+import { site, profile, titles, content } from '../data/site';
+import '../styles/base.css';
 import '../styles/pdf.css';
 
 const birth = new Date(profile.birthDate);
@@ -10,18 +10,21 @@ const now = new Date();
 let age = now.getFullYear() - birth.getFullYear();
 if (now < new Date(now.getFullYear(), birth.getMonth(), birth.getDate())) age -= 1;
 
-const contacts = [
+const shortUrl = (href: string) => href.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '');
+const resumeLinks = profile.links.filter((l) => ['GitHub', 'LinkedIn'].includes(l.label));
+
+const contacts: [string, string, string?][] = [
   ['Age', String(age)],
   ['Location', profile.location],
   ['Email', profile.email, `mailto:${profile.email}`],
-  ['Web', site.url.replace('https://', ''), site.url],
-  ...profile.links.slice(0, 2).map((l) => [l.label, l.href.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, ''), l.href]),
+  ['Web', shortUrl(site.url), site.url],
+  ...resumeLinks.map((l): [string, string, string] => [l.label, shortUrl(l.href), l.href]),
 ];
 const groups = [
   ['Proficient', content.skills.proficient],
   ['Comfortable', content.skills.comfortable],
   ['Familiar', content.skills.familiar],
-];
+] as const;
 ---
 <Base title={`${profile.name} – Resume`} path="/pdf" print>
   <div class="sheet">
@@ -36,7 +39,7 @@ const groups = [
           {profile.about.map((p) => <p>{p}</p>)}
         </section>
         <section>
-          <h2>Contacts</h2>
+          <h2>{titles.contacts}</h2>
           <dl class="contacts">
             {contacts.map(([label, value, href]) => (
               <>
@@ -51,7 +54,7 @@ const groups = [
           {groups.map(([label, items]) => (
             <>
               <h3>{label}</h3>
-              <p>{items}</p>
+              <p>{items.join(', ')}</p>
             </>
           ))}
         </section>
