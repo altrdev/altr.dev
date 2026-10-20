@@ -8,9 +8,8 @@ html[data-print] a { color: #111; text-decoration: none; }
 .sheet .role { margin-top: 2px; font: 600 13px var(--mono); color: #555; }
 
 .cols { display: grid; grid-template-columns: 31% 1fr; gap: 28px; align-items: start; }
-.sheet section { margin-top: 0; margin-bottom: 20px; }
+.sheet section { margin-bottom: 20px; }
 .sheet h2 { margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid #ddd; font: 700 11px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
-.sheet h2 span { display: none; }
 .sheet aside p { font-size: 12px; color: #333; }
 .sheet aside p + p { margin-top: 6px; }
 .sheet aside h3 { margin-top: 8px; font: 700 11px var(--mono); }

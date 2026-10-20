@@ -8,7 +8,7 @@
 import { createServer } from 'node:http';
 import { existsSync } from 'node:fs';
 import { copyFile, mkdir, readFile, stat } from 'node:fs/promises';
-import { dirname, extname, join, normalize, resolve } from 'node:path';
+import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -24,7 +24,7 @@ function serve() {
       let path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
       if (path === '/pdf') path = '/pdf.html';
       const file = normalize(join(dist, path));
-      if (!file.startsWith(dist)) throw new Error('outside dist');
+      if (file !== dist && !file.startsWith(dist + sep)) throw new Error('outside dist');
       const body = await readFile(file);
       res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' });
       res.end(body);

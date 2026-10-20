@@ -4,23 +4,23 @@ import { mdiEmailOutline, mdiMapMarkerOutline, mdiFileDocumentOutline, mdiArrowT
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Description from '../components/Description.astro';
+import SectionTitle from '../components/SectionTitle.astro';
 import avatar from '../assets/profile.jpg';
-import { site, profile, services, titles, content } from '../data/site.js';
-import '../styles/global.css';
+import { site, profile, services, titles, content } from '../data/site';
+import '../styles/base.css';
+import '../styles/home.css';
 
 const year = new Date().getFullYear();
-
-const resumeUrl = '/alessandro-travi-resume.pdf';
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: profile.name,
-  jobTitle: 'Software Engineer',
-  knowsAbout: ['Backend development', 'Cloud infrastructure', 'Infrastructure as Code', 'AI-assisted development', 'AI consulting', 'IoT', '3D printing'],
+  jobTitle: profile.jobTitle,
+  knowsAbout: profile.knowsAbout,
   url: site.url,
   email: profile.email,
-  address: { '@type': 'PostalAddress', addressLocality: 'Como', addressCountry: 'IT' },
+  address: { '@type': 'PostalAddress', addressLocality: profile.addressLocality, addressCountry: profile.addressCountry },
   sameAs: profile.links.map((l) => l.href),
 };
 ---
@@ -41,14 +41,14 @@ const jsonLd = {
           {profile.links.map((l) => (
             <li><a href={l.href} target="_blank" rel="noopener" aria-label={l.label} title={l.label}><Icon path={l.path} size={20} /></a></li>
           ))}
-          <li><a class="btn" href={resumeUrl} target="_blank" rel="noopener"><Icon path={mdiFileDocumentOutline} size={16} />{content.labels.download}</a></li>
+          <li><a class="btn" href={site.resume} target="_blank" rel="noopener"><Icon path={mdiFileDocumentOutline} size={16} />{content.labels.download}</a></li>
         </ul>
       </div>
     </header>
 
     <main>
       <section aria-labelledby="services">
-        <h2 id="services"><span aria-hidden="true">#</span> {titles.services}</h2>
+        <SectionTitle id="services">{titles.services}</SectionTitle>
         <ul class="services">
           {services.map((svc) => (
             <li class="service">
@@ -61,17 +61,17 @@ const jsonLd = {
       </section>
 
       <section aria-labelledby="about">
-        <h2 id="about"><span aria-hidden="true">#</span> {titles.about}</h2>
+        <SectionTitle id="about">{titles.about}</SectionTitle>
         {profile.about.map((p) => <p>{p}</p>)}
       </section>
 
       <section aria-labelledby="projects">
-        <h2 id="projects"><span aria-hidden="true">#</span> {titles.projects}</h2>
+        <SectionTitle id="projects">{titles.projects}</SectionTitle>
         <ul class="projects">
           {content.personalProjects.map((p) => (
             <li class="project">
               <h3>
-                {p.link && !p.soon ? (
+                {p.link ? (
                   <a href={p.link} target="_blank" rel="noopener">{p.title}<Icon path={mdiArrowTopRight} size={14} /></a>
                 ) : p.title}
                 {p.badge && <span class="badge">{p.badge}</span>}
@@ -83,15 +83,15 @@ const jsonLd = {
       </section>
 
       <section aria-labelledby="contact" class="contact">
-        <h2 id="contact"><span aria-hidden="true">#</span> {titles.contact}</h2>
-        <p>Have a project in mind, or just want to talk it through? Drop me a line.</p>
+        <SectionTitle id="contact">{titles.contact}</SectionTitle>
+        <p>{content.contactIntro}</p>
         <p><a class="btn" href={`mailto:${profile.email}`}><Icon path={mdiEmailOutline} size={16} />{profile.email}</a></p>
       </section>
     </main>
 
     <footer>
-      <a class="top" href="#top" aria-label="Back to top"><Icon path={mdiChevronUp} size={20} /></a>
-      <p>© {year} {profile.name} · <a href="https://github.com/altrdev/altr.dev" target="_blank" rel="noopener">view source</a></p>
+      <a class="top" href="#top" aria-label={content.labels.backToTop}><Icon path={mdiChevronUp} size={20} /></a>
+      <p>© {year} {profile.name} · <a href={site.repo} target="_blank" rel="noopener">{content.labels.viewSource}</a></p>
     </footer>
   </div>
 </Base>

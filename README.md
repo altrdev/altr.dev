@@ -3,7 +3,7 @@
 Personal site of Alessandro Travi, built with [Astro](https://astro.build) as a fully static site (no client-side framework) and deployed on Vercel.
 
 - `/` – single-page resume, light/dark theme follows the system
-- `/pdf` – print-optimized resume, also exported as `/alessandro-travi-resume.pdf` (the "Download resume" button)
+- `/pdf` – print-optimized resume, also exported as `/alessandro-travi-resume.pdf` (the "View resume" button)
 
 ## Develop
 
@@ -12,6 +12,7 @@ npm install
 npm run dev      # http://localhost:4321
 npm run build    # static output in dist/
 npm run preview
+npm run check    # type-check
 ```
 
 ## Resume PDF
@@ -26,9 +27,9 @@ npm run resume   # set CHROME_PATH if Chrome is not in a common location
 
 ## Content
 
-All content lives in `src/data/site.js`. Edit it and the pages update.
+All content lives in `src/data/site.ts`. Edit it and the pages update.
 
 ## Config
 
-- `PUBLIC_MEASUREMENT_ID` (or the legacy `NEXT_PUBLIC_MEASUREMENT_ID`) – Google Analytics ID, optional.
-- Vercel framework preset is set to Astro through `vercel.json`.
+- Analytics: Vercel Web Analytics and Speed Insights (cookieless), enabled from the Vercel dashboard; not loaded on `/pdf`.
+- Vercel settings live in `vercel.json` (clean URLs, no trailing slash).
