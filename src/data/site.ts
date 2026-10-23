@@ -144,9 +144,14 @@ export const content = {
   ],
   personalProjects: [
     {
+      title: "Ruspa Slug",
+      link: "https://ruspa.altr.dev",
+      badge: "New",
+      description: "A Metal Slug-style run & gun that makes fun of Italian politics. Drive a bulldozer through eight levels of umbrellas, red tape and late trains."
+    },
+    {
       title: "Brezza",
       link: "https://brezza.altr.dev/",
-      badge: "New",
       description: "Battery-powered Zigbee sensor that tells Home Assistant when the wind is shaking your awning.\nESP32-H2, custom PCB, 3D-printed enclosure."
     },
     {
