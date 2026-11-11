@@ -144,9 +144,14 @@ export const content = {
   ],
   personalProjects: [
     {
+      title: "CellaLab",
+      link: "https://cellalab.altr.dev/",
+      badge: "New",
+      description: "Browser-based designer for DIY lithium battery packs. 2D editor, 3D preview, 3D-printable cell holder (STL) and busbar strips (DXF/SVG)."
+    },
+    {
       title: "Ruspa Slug",
       link: "https://ruspa.altr.dev",
-      badge: "New",
       description: "A Metal Slug-style run & gun that makes fun of Italian politics. Drive a bulldozer through eight levels of umbrellas, red tape and late trains."
     },
     {
